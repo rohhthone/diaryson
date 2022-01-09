@@ -1,0 +1,92 @@
+<html>
+<style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:1vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;display:flex;align-items:center; margin:3vmin;}
+input{width: 100%; margin: 1vmin;}
+label{width: 50%; height: auto; text-align: right;}
+p{margin: 3vmin; text-align: justify;}
+span{font-weight: 600;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Add type</h3>
+<form action="" method="POST">
+<label for="B0">Add name:</label><input type="text" id="B0" name="title" maxlength="99" required>
+<label for="B1">Add rule: <sup>1</sup></label><input type="text" id="B1" name="title" maxlength="99" required>
+<input type="submit" value="OK"><input type="reset" value="NULL">
+</form>
+<p><sup>1</sup> Rule contains 3 types of system symbols and the same origin of pattern. There are * + .<br> <span>*</span> determines any input to fill out INTEGER values.<br> <span>+</span> determines the additional description to the input, which will descrbe fulfilled values.<br> <span>.</span> determines the separation between expressions.<br> For example: *+$.*+€ this entire rule will create 2 inputs, one value will define $ and another €<br> Conclusion for rule therminology <span>[*] | [*]+[+]+[any amount of any symbol] | [*]+[+]+[any amount of any symbol]+[.]+[*]+[+]+[any amount of any symbol]+[.]...</span></p>
+<h3>Edit type</h3>
+<form action="" method="POST"><input type="text" name="title" maxlength="99" value="" required><input type="text" name="title" maxlength="99" value="" required><input type="submit" name="edit" value="OK"><input type="submit" name="delete" value="DELETE"></form>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+</script>
+</body>
+</html>
+
+<!-- ADD TWO -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:2vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;display:flex;align-items:center; margin:3vmin; flex-wrap: wrap;}
+input{width: 100%; text-align: center; margin: 1vmin;}
+img{height: 15vmin;display: block;}
+#FILE{width: 100%;display: flex;align-items: center;justify-content: space-around;}
+#RULE{width: 100%;display: flex;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Upload proof</h3>
+<form action="" method="POST"><div id="RULE"></div>
+<input type="file" name="file" id="f" accept="image/*" required><div id="FILE"></div>
+<input type="submit" value="OK"><input type="reset" value="NULL">
+</form>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var r='*+$.*+%';
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function R(){var c=r.split('.');for(var i=0;i<c.length;i++){var C="";if(c[i].includes('+')){C=c[i].split('+')[1]};RULE.innerHTML+='<input type="number" name="value[]" placeholder="'+C+'" required>'}}
+function F(){if(!f.value==""){var c=f.files[0], C=window.URL.createObjectURL(c);FILE.innerHTML='<img src="'+C+'">'}else{FILE.innerHTML=""}}
+document.addEventListener("DOMContentLoaded", R);
+f.addEventListener("change", F);
+</script>
+</body> -->
+
+<!-- ADD ONE -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:2vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;display:flex;align-items:center; margin:3vmin;}
+select{width: 60%;}
+input{width: 40%;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Choose type</h3>
+<form action="" method="GET">
+<select name="T" required>
+<option value="" hidden>Select type</option>
+<option value="1">Food</option>
+<option value="2">Liquid</option>
+</select>
+<input type="submit" value="OK"><input type="reset" value="NULL">
+</form>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+</script>
+</body> -->

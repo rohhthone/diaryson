@@ -1,0 +1,18 @@
+Uploading E-PASS system on pure Linux
+
+Upload comfortable Linux OS on personal machine.
+Find the right directory to host server.
+
+Connecting Linux to the network.
+Personalize prvate and public streams. 
+Contribute endpoint and IP address. 
+
+Initialize Apache web server.
+Upload mysql, mysqlnd, httpd, php, perl to your installs. 
+
+Create DB to your Linux server -> Connenct to DB -> Set up DB.
+
+Upload server files to /var/www/
+
+Solving problems
+Connecting to MySQL DB via PHP display error - connection failed: permission denied - setsebool -P httpd_can_network_connect_db 1 [SELinux boolean must be set on the server where you are running apache.]

@@ -1,0 +1,401 @@
+<html>
+<style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:1vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+#A0, #A1, #A2, #B0, #B1{width: 80%;height: auto;display:flex;flex-direction:column;align-items:center;}
+h5{width: 100%; text-align: center;margin: 1vmin;font-size: 1.5vmax;}
+form{width: 100%;height: auto;display: flex;flex-wrap: wrap;}
+select{width: 100%;}
+label{min-width: 10%;display: flex;align-items: center;padding: 1vmin;}
+input[value="OK"]{width: 100%;}
+input[type="text"]{width: 100%;}
+input{margin: 1vmin;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<div id="A0"><h5>Create group</h5><form action="" method="POST"><input type="text" placeholder="Name" name="name" maxlength="99" required><input type="submit" value="OK"></form></div>
+<div id="A1"><h5>Create definition</h5><form action="" method="POST"><select name="group"><option value="" hidden required>Select group</option><option value="1">Time</option><option value="2">Liquid</option><option value="3">Point</option></select><input type="text" placeholder="Name" name="name" maxlength="99" required><input type="submit" value="OK"></form></div>
+<div id="A2"><h5>Create pattern</h5><form action="" method="POST"><label for="D0"><input type="checkbox" name="title[]" id="D0" value="1" required>Sleep</label><label for="D1"><input type="checkbox" name="title[]" id="D1" value="2">Sleep</label><label for="D2"><input type="checkbox" name="title[]" id="D2" value="3">Sleep</label><input type="submit" value="OK"></form></div>
+<!-- <div id="A2"><h5>Edit pattern</h5><form action="" method="POST"><label for="D0"><input type="checkbox" name="title[]" id="D0" value="1" required>Sleep</label><label for="D1"><input type="checkbox" name="title[]" id="D1" value="2">Sleep</label><label for="D2"><input type="checkbox" name="title[]" id="D2" value="3">Sleep</label><input type="submit" value="OK"></form></div> -->
+<div id="B0"><h5>Remove group</h5><form action="" method="POST"><label for="E0"><input type="radio" name="title[]" id="E0" value="3">Time</label><label for="E1"><input type="radio" name="title[]" id="E1" value="3">Liquid</label><label for="E2"><input type="radio" name="title[]" id="E2" value="3">Point</label><input type="submit" value="OK"></form></div>
+<div id="B1"><h5>Remove definitons</h5><form action="" method="POST"><label for="F0"><input type="checkbox" name="title[]" id="F0" value="1" required>Sleep</label><label for="F1"><input type="checkbox" name="title[]" id="F1" value="2">Sleep</label><label for="F2"><input type="checkbox" name="title[]" id="F2" value="3">Sleep</label><input type="submit" value="OK"></form></div>
+<div id="DATE"></div>
+<div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+</script>
+</body>
+</html>
+
+
+
+<!-- ADD 3 -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:1vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;margin:3vmin;display: flex;flex-direction: column;align-items: center;}
+input{width: 100%;}
+#A0{width: 100%;}
+#B0{width: 80%;}
+.i{width: 100%;display: flex;align-items:center;}
+.i>legend{width: 40%;margin: 1vmin; text-align: center;}
+.i>input{width: 60%;margin: 1vmin;text-align: center;}
+.i>button{width: 40%;margin: 1vmin;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Choose values</h3>
+<form action="" method="POST">
+<div id="A0">
+<div class="i"><legend>Text</legend><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="M()">-</button></div>
+<div class="i"><legend>Text</legend><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="M()">-</button></div>
+<div class="i"><legend>Text</legend><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="M()">-</button></div>
+</div>
+<input type="submit" value="OK">
+</form>
+<div id="B0">
+</div>
+<div id="DATE"></div>
+<div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function M(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode,Cc=C.parentNode;if(Cc==A0){c.innerHTML='+';B0.appendChild(C)}else {c.innerHTML='-';A0.appendChild(C)}}
+</script>
+</body> -->
+
+<!-- ADD 2 -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:1vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;margin:3vmin;display: flex;flex-direction: column;align-items: center;}
+input{width: 100%;}
+label{width: 50%; display: flex; align-items: center;}
+label>input{width: 2vmin; height: 2vmin; margin: 1vmin;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Choose values</h3>
+<form action="" method="GET">
+<label for="A1"><input type="checkbox" name="v" id="A1" value="1" readonly>Study</label>
+<label for="A2"><input type="checkbox" name="v" id="A2" value="2" readonly>Study</label>
+<label for="A3"><input type="checkbox" name="v" id="A3" value="3" readonly>Study</label>
+<input type="submit" value="OK">
+</form>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function M(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+</script>
+</body> -->
+
+<!-- ADD 1 -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:2vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;display:flex;align-items:center; margin:3vmin;}
+select{width: 60%;}
+input{width: 40%;}
+#DATE{display: flex;position: fixed;bottom: 0;width: 100%;height: auto;font-size: 1vmax;justify-content: space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Choose group</h3>
+<form action="" method="GET">
+<select name="G">
+<option value="1">Time</option>
+<option value="2">Liquid</option>
+<option value="3">Point</option>
+</select>
+<input type="submit" value="OK">
+</form>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function M(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+</script>
+</body> -->
+
+<!-- EDIT & FILL -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:2vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width:80%;height:auto;margin:3vmin;}
+.i{width: 100%;display: flex;align-items:center;}
+.i>legend{width: 40%;height: auto;text-align: center;}
+.i>input{width: 80%;margin: 1vmin;text-align: center;}
+.i>button{width: 40%;margin: 1vmin;}
+input[type="submit"]{width: 100%;}
+#DATE{display:flex;position:fixed;bottom:0;width:100%;height:auto;font-size:1vmax;justify-content:space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Editing | Filling</h3>
+<div id="A0">
+<form action="" method="post">
+<div class="i"><legend>Sleep</legend><input type="number" value="1" readonly hidden><input type="number" name="title[]" hidden><input type="number" name="value[]"></div>
+<div class="i"><legend>Work</legend><input type="number" value="2" readonly hidden><input type="number" name="title[]" hidden><input type="number" name="value[]"></div>
+<input type="submit" value="OK">
+</form>
+</div>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function M(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+</script>
+</body> -->
+
+<!-- CHOOSE FORMAT -->
+<!-- <style>
+*{margin:0;padding:0;font-family:'Segoe UI';font-size:3vmax;}
+html{background-color:rgba(251,251,251,1);color:rgba(4,4,4,1);}
+body{width:100%;height:auto;display:flex;flex-direction:column;align-items:center;}
+#A0{width:80%;display:flex;}
+form{width:50%;height:auto;display:flex;align-items:center;margin:3vmin;}
+input{width:100%;}
+#DATE{display:flex;position:fixed;bottom:0;width:100%;height:auto;font-size:1vmax;justify-content:space-around;}
+#ALERT{position: fixed;bottom: 0;right: 0;width: 100%;height: auto;font-size: 1vmax;}
+</style>
+<body>
+<h3>Choose format</h3>
+<div id="A0">
+<form action="" method="POST">
+<input type="number" name="f" value="2" hidden>
+<input type="submit" value="Edit" id="a1" title="Quick filling | Editing values">
+</form>
+<form action="" method="POST">
+<input type="number" name="f" value="1" hidden>
+<input type="submit" value="Add" id="a2" title="Add specific values">
+</form>
+</div>
+<div id="DATE"></div><div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<script>
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+</script>
+</body> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {++++++++++++++} -->
+<!-- TRY ONE -->
+<!-- <style>
+*{margin: 0; padding: 0; font-family: 'Segoe UI';font-size: 1vmax;}
+html{background-color: rgba(251, 251, 251, 1);color: rgba(4, 4, 4, 1);}
+body{width: 100%; height:auto;display:flex;flex-direction:column;align-items:center;}
+h3{font-size: 1.3vmax;width: 100%;text-align: center;margin-top: 3vmin;}
+form{width: 80vw;}
+form>input{width: 100%;margin-top: 1vmin;}
+legend{font-size: 1.2vmax;padding: 1vmin;}
+.i{width: 100%;display: flex;}
+.i>input{width: 40%; padding: 1vmin;margin: 1vmin;}
+.i>button{width: 20%;margin: 1vmin;}
+#C0{width: 100%;height: auto;display: flex;align-items: center;justify-content: space-between;margin-top: 1vmin;}
+#A0{cursor: pointer; width: 50%; text-align: center;}
+#B0{width: 50%;}
+input[type="submit"]{cursor: pointer;}
+</style>
+<body>
+<p>This site require to use javascript</p>
+<form action="" method="POST">
+<fieldset>
+<legend>Statistics</legend>
+<div class="i"><input type="text" name="title[]"><input type="number" name="value[]"><button onclick="m()">-</button></div>
+</fieldset>
+<div id="C0">
+<select id="B0">
+<optgroup label="Time">
+<option value="1">Sleep</option>
+<option value="2">Work</option>
+</optgroup>
+<optgroup label="Habit">
+<option value="11">Teeth wash</option>
+<option value="12">Hand wash</option>
+</optgroup>
+<optgroup label="Data">
+<option value="21">Kcal</option>
+<option value="22">Pulse</option>
+</optgroup>
+</select>
+<div id="A0">+</div>
+</div>
+</div>
+<input type="submit" value="OK">
+</form>
+<h3>Create new defintion</h3>
+<form action="" method="POST">
+
+</form>
+<h3>Choose your usual</h3>
+<form action="" method="POST">
+
+</form>
+<script>
+var DATA=[],DEFINITON=[];
+function m(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+</script>
+</body> -->
+
+<!-- TRY TWO -->
+<!-- <style>
+*{margin: 0; padding: 0; font-family: 'Segoe UI';font-size: 1vmax;}
+html{background-color: rgba(251, 251, 251, 1);color: rgba(4, 4, 4, 1);}
+body{width: 100%; height:auto;display:flex;flex-direction:column;align-items:center;}
+h3{font-size: 1.3vmax;width: 100%;text-align: center;margin-top: 3vmin;}
+form{width: 80vw;}
+form>input{width: 100%;margin-top: 1vmin;}
+legend{font-size: 1.2vmax;padding: 1vmin;}
+.i{width: 100%;display: flex;}
+.i>input{width: 50%; padding: 1vmin;margin: 1vmin;}
+.i>button{width: 20%;margin: 1vmin;}
+#C0>label{display: flex;align-items: center;}
+</style>
+<body>
+<p>This site require to use javascript</p>
+<form action="" method="POST">
+<legend>Statistics</legend>
+<div class="i"><input type="text" name="title[]" value="Sleep" readonly><input type="number" name="value[]"></div>
+<div class="i"><input type="text" name="title[]" value="Work" readonly><input type="number" name="value[]"></div>
+<div class="i"><input type="text" name="title[]" value=Water readonly><input type="number" name="value[]"></div>
+<input type="submit" value="OK">
+</form>
+<div id="C0">
+<legend>Choose variables</legend>
+<label for="C01"><input type="checkbox" id="C01" checked>Sleep</label>
+<label for="C02"><input type="checkbox" id="C02" checked>Work</label>
+<label for="C03"><input type="checkbox" id="C03">Study</label>
+<label for="C04"><input type="checkbox" id="C04" checked>Water</label>
+<label for="C05"><input type="checkbox" id="C05">Alchohol</label>
+</div>
+<script>
+var USE=[],DATA=[],DEFINITON=['Sleep','Work','Study','Water','Alchohol',],TYPE=['Time','Time','Time','Liquid','Liquid',];
+
+</script>
+</body> -->
+
+<!-- TRY THREE -->
+<!-- <style>
+*{margin: 0; padding: 0; font-family: 'Segoe UI';font-size: 1vmax;}
+html{background-color: rgba(251, 251, 251, 1);color: rgba(4, 4, 4, 1);}
+body{width: 100%; height:auto;display:flex;flex-direction:column;align-items:center;}
+</style>
+<body>
+<p>This site require to use javascript</p>
+<h4>Accept values</h4>
+<div id="A0">
+<div class="a1">
+<h5>Time</h5>
+<div class="i"><input type="text" value="Work" readonly><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="m()">-</button></div>
+</div>
+<div class="a2">
+<h5>Liquid</h5>
+<div class="i"><input type="text" value="Water" readonly><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="m()">-</button></div>
+</div>
+<div class="a3">
+<h5>Point</h5>
+<div class="i"><input type="text" value="Task" readonly><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="m()">-</button></div>
+</div>
+</div>
+<h4>Add new value</h4>
+<div id="B0">
+<div class="b1">
+<p>Time</p>
+<div class="i"><input type="text" value="Sleep" readonly><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="p()">+</button></div>
+</div>
+<div class="b2">
+<p>Liquid</p>
+<div class="i"><input type="text" value="Alchohol" readonly><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="p()">+</button></div>
+</div>
+<div class="b3">
+<p>Point</p>
+<div class="i"><input type="text" value="Target" readonly><input type="number" name="title[]" hidden><input type="number" name="value[]"><button onclick="p()">+</button></div>
+</div>
+</div>
+<script>
+var DATA=[],DEFINITON=[];
+function m(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+</script>
+</body> -->
+
+<!-- TRY FOUR -->
+<!-- <style>
+*{margin: 0; padding: 0; font-family: 'Segoe UI';font-size: 1vmax;}
+html{background-color: rgba(251, 251, 251, 1);color: rgba(4, 4, 4, 1);}
+body{width: 100%; height:auto;display:flex;flex-direction:column;align-items:center;}
+#A0{display: flex; width: 80vw;height: auto; align-items: center; justify-content: space-around;}
+#A0>form{width: 100%;}
+#A0>form>input{width: 100%;}
+</style>
+<body>
+<div id="A0">
+<form action="" method="GET"><input type="number" name="g" value="1" hidden><input type="submit" value="Time"></form>
+<form action="" method="GET"><input type="number" name="g" value="2" hidden><input type="submit" value="Liquid"></form>
+<form action="" method="GET"><input type="number" name="g" value="3" hidden><input type="submit" value="Point"></form>
+</div>
+<h3>Choose values</h3>
+<form action="" method="GET">
+<label for="B01"><input type="checkbox" name="v" value="1" id="B01">Sleep</label>
+<label for="B02"><input type="checkbox" name="v" value="2" id="B02">Sleep</label>
+<label for="B03"><input type="checkbox" name="v" value="3" id="B03">Sleep</label>
+<label for="B04"><input type="checkbox" name="v" value="4" id="B04">Sleep</label>
+<label for="B05"><input type="checkbox" name="v" value="5" id="B05">Sleep</label>
+<input type="submit" value="ok">
+</form>
+<script>
+var DATA=[],DEFINITON=[];
+function m(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+</script>
+</body> -->

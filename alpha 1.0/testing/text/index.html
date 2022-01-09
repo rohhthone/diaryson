@@ -1,0 +1,137 @@
+<html>
+<style>
+*{margin: 0; padding: 0; font-family: 'Segoe UI';font-size: 1vmax;}
+html{background-color: rgba(251, 251, 251, 1);color: rgba(4, 4, 4, 1);}
+body{width: 100%; height:auto;display:flex;flex-direction:column;align-items:center;}
+form{width: 80vw; height: auto;}
+form>div{width: 100%; height: auto; display:flex; flex-wrap: wrap;}
+form>div>textarea{width: 100%;height: 50vh;min-height: 38vh;max-height: 62vh; resize: vertical;overflow-y: auto;}
+form>div>button{width: 100%; padding: 1vmin;}
+form>div>input{width: 100%; padding: 1vmin;}
+.i{width: 100%;display: flex;margin-top: 1vmin;}
+.i>input{width: 40%; padding: 1vmin;}
+.i>button{width: 20%;}
+h3{text-align: center; margin-top: 3vmin;font-size: 1.2vmax;}
+#pb{width: 100%; margin-top: 1vmin;text-align: center;cursor: pointer;}
+#ok{margin-top: 1vmin;}
+#text>input{margin-top: 1vmin;}
+#text>textarea{margin-top: 1vmin; padding: 1vmin;}
+</style>
+<body>
+<p>This site require to use javascript</p>
+<form action="" method="POST">
+<h3>Text</h3>
+<div id="text"><input type="text" name="title" placeholder="Title of the document"><textarea name="text" placeholder="Containing of the document"></textarea></div>
+<h3>Reference</h3>
+<div id="link"><div class="i"><input type="url" name="http[]" placeholder="http:// or https://"><input type="text" name="value[]" placeholder="Value"><button onclick="m()">-</button></div></div><h1 id="pb">+</h1>
+
+<h3>File</h3>
+<div id="file"><input type="file" name="file" id="filer"></div>
+<div id="ok"><input type="submit" value="OK" name="ok"></div>
+</form>
+<script>
+function m(e){var c=e ? e.target : window.event.srcElement,C=c.parentNode;C.remove();}
+function p(){var C=pb.parentNode;console.log('it work');
+link.insertAdjacentHTML('beforeend', '<div class="i"><input type="url" name="http[]" placeholder="http:// or https://"><input type="text" name="value[]" placeholder="Value"><button onclick="m()">-</button>');}
+function f(){var c=filer.files;console.log("Filename: " + c[0].name);console.log("Type: " + c[0].type);console.log("Size: " + c[0].size + " bytes");if(c[0].size>1024000000){alert('Maximum file size 1GB, please reduce file size and try it again.');filer.value='';filer.files='';}}
+pb.addEventListener("click", p);
+filer.addEventListener("change", f);
+</script>
+</body>
+</html>
+
+<!-- OLD TWO -->
+<!-- <style>
+*{margin: 0; padding: 0; font-family: 'Segoe UI';font-size: 1vmax;}
+html{background-color: rgba(251, 251, 251, 1);color: rgba(4, 4, 4, 1);}
+body{width: 100%; height:auto;display:flex;flex-direction:column;align-items:center;}
+h1,h2,h3{width: 100%; text-align: center;margin-top:3vmin}
+.form{width:80vw;height:auto;display:flex;flex-direction:column;align-items:center;}
+#a{width: 100%;height: auto;display: flex;flex-direction: column;}
+#a1{text-align: center;}
+.button{width: 100%;text-align: center;}
+input{width:100%;height:auto;margin-bottom: 1vmin;}
+select{width: 100%; height: auto; text-align: center;margin-bottom: 2vmin;}
+textarea{width:100%;height:30vmin;min-height: 20vmin;max-height: 80vmin;overflow:auto;resize: vertical;padding: 1vmin;}
+form{width:80vw;height:auto;display:flex;flex-direction:column;align-items:center;}
+form>div{width:100%;height:auto;}
+#text>.i{width: 100%;height: auto;}
+#link>.i{width: 100%;height: auto;display: flex;}
+.fill{width:80vw;height:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.fill>button{width:30%;margin-top:2vmin;}
+.l{width:100%;height:auto;display:flex;align-items:center;justify-content:space-around;}
+.l>p{margin:2vmin;}
+.cr{color:rgba(241,4,4,0.9);}
+.cg{color:rgba(4,241,4,0.9);}
+.u{opacity:0.5;}
+</style>
+<body>
+<p>Site required to use JavaScript</p>
+<h3>Post</h3>
+<div class="form"><select name="type" id="T" required><option value="" selected disabled hidden>Select</option><option value="1">Post</option><option value="2">Reference</option><option value="3">File</option></select>
+<div id="a"><input type="file" name="file" id="a5" onchange="f();"></div>
+</div>
+<div class="fill"><button class="cr u" onmousemove="i();">Text</button><button onmousemove="i();">Link</button><button onmousemove="i();">File</button>
+<div class="l"><p class="cr">Title: </p><p class="cr">Text: </p></div></div>
+<div class="confirm h">
+<form action="" method="POST">
+<h3>Text</h3><div id="text"><div class="i"><input type="text" name="tname" id="A1"><textarea name="ttext" id="A2">Just testing for the random combination of letters which considering to be words</textarea></div></div>
+<h3>Link</h3><div id="link"><div class="i"><input type="text" name="lhttp" id="A3-0"><input type="text" name="ltype" id="A4-0"></div><div class="i"><input type="text" name="lhttp" id="A3-1"><input type="text" name="ltype" id="A4-1"></div></div>
+<h3>File</h3><div id="file"><div class="i"><input type="file" name="froot" id="A5" required readonly><input type="text" name="fname" id="A6" required readonly><input type="number" name="fsize" id="A7" required readonly></div></div>
+<input type="submit" name="s" value="POST">
+</form>
+</div>
+</body>
+<script>
+function r(){LINK.push({http:a3.value,value:a4.value});a3.value="";a4.value=""} 
+function f(){var file=a5.files;console.log("Filename: " + file[0].name);console.log("Type: " + file[0].type);console.log("Size: " + file[0].size + " bytes");
+A5=a5.files;A5.value=A5[0].name;console.log("Filename: " + A5[0].name);console.log("Type: " + A5[0].type);console.log("Size: " + A5[0].size + " bytes");}
+function i(e){var c=e ? e.target : window.event.srcElement,C=c.innerHTML,C0=c.parentNode;
+if(TEXT.title==""|TEXT.text==""){return C0.getElementsByClassName('l')[0].innerHTML="<p class='cr'>Please, fill title and text to continue</p>";}
+if(c.innerHTML=="Text"){c.classList.toggle('cg');C0.getElementsByClassName('l')[0].innerHTML="<p class='cg'>Title: "+TEXT.title+"</p><p class='cg'>Text: "+TEXT.text.length+"</p>";}
+else if(c.innerHTML=="Link"){}
+else if(c.innerHTML=="File"){}
+console.log('it do not work');
+console.log(TEXT.title+'  '+TEXT.text);
+}
+let TEXT={title:"",text:""},
+LINK=[],
+FILE={};
+T.onchange=function(e){var c=e ? e.target : window.event.srcElement,C=c.value;
+if(C<=1){a.innerHTML='<input type="text" name="title" id="a1" placeholder="Title" required maxlength="99"><textarea name="text" id="a2" required placeholder="Text"></textarea>'}
+else if(C<=2){a.innerHTML='<input type="url" name="http" id="a3" placeholder="http:// or https://"><input type="text" name="value" id="a4" placeholder="Describe the reference"><button onclick="r();">Link this reference</button>'}
+else if(C<=3){a.innerHTML=''}
+}
+a.onchange=function(e){var c=e ? e.target : window.event.srcElement,C=c.value;
+console.log(TEXT);console.log(LINK);console.log(FILE);
+if(c.id==a1){TEXT.title=a1.value;}
+else if(c.id==a2){TEXT.text=a2.value;}
+else if(c.id==a3){}
+else if(c.id==a4){}
+}
+</script> -->
+
+<!-- OLD ONE -->
+<!-- <script>
+var t=new Array();
+for(var v=0;v<T.length;v++){t[v]='a'+v;t[v]=[b0={c0:"",c1:""}]}
+console.log(t);
+T.onchange=function(e){var c=e ? e.target : window.event.srcElement,C=c.value,A=t[C-1];a.title=C;
+if(C<=1){if(A.length<=1){
+}}
+else if(C<=2){if(A.length<=1){
+a.innerHTML='<div class="a" id="b-0" onchange="Cha()"><input type="url" name="link" placeholder="Hyperlink"><input type="text" name="def" placeholder="Definition"><div class="button"  title="Delete" onclick="Del()">-</div></div><div class="button" onclick="Add()" title="Add">+</div>';
+}}
+else if(C<=3){if(A.length<=1){
+}}
+}
+function Add(e){console.log(t);var c=e?e.target : window.event.srcElement,C=c.parentNode,n=parseInt(C.title),i=t[n-1].length;c.remove(); if(n<=1){}else if(n<=2){C.innerHTML+='<div class="a" id="b-'+i+'" onchange="Cha()"><input type="url" name="link" placeholder="Hyperlink"><input type="text" name="def" placeholder="Definition"><div class="button" title="Delete" onclick="Del()">-</div></div><div class="button" onclick="Add()" title="Add">+</div>';
+t[n-1].push({c0:"",c1:""});console.log(t[n-1]);} else if(n<=3){}
+}
+function Del(e){var c=e?e.target : window.event.srcElement,C=c.parentNode,C0=C.parentNode,n=parseInt(C0.title),i=parseInt(C.id.split("-")[1]);t[n].splice(i, 1);C.remove();
+}
+function Cha(e){var c=e?e.target : window.event.srcElement,C=c.parentNode,C0=C.parentNode,n=parseInt(C0.title),i=parseInt(C.id.split("-")[1]),i0=0;
+while(i0<C.children.length){if(C.children[i0]==c){break;};i0++};i1='c'+i0;t[n][i][i1]=c.value;
+console.log(n+' '+i+' '+i1);console.log(c.value);console.log(t[n][i]);console.log(t[n]);console.log(t);
+}
+</script> -->

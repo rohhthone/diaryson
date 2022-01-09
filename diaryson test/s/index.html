@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>CC Profile</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="author" content="suicvairduCConstantinius">
+<meta name="format-detection" content="telephone=no">
+<script>
+const user=[1,'cc','Cost','Cest',new Date(2000,7,31,16),'59.82851, 30.4191016'];
+</script>
+<style>
+*{margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 1.4vmax;}
+.f1x{display: flex; justify-content: space-around; align-items: center;}.fdc{flex-direction: column;}.fdrc{flex-direction: column-reverse;}
+.h1d{display: none;}
+.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}
+
+body{display: flex; flex-direction: column; align-items: center; color: #f4f4f4;}
+.content{ width: 100vmin; height: 100vh; background-color: #0c0c0c; display: flex; justify-content: space-around}
+.titleson{width: 100%; height: auto; text-align: center; font-weight: 600; border-bottom: 0.1vmin solid #f4f4f4;}
+.tit{width: 100%; height: auto; text-align: center;}
+input{width: 100%;}
+input[type="submit"]{cursor: pointer;}
+form{width: 45%; height: 80vh; display: flex; flex-direction: column; justify-content: space-around; align-items: center; }
+.function{position: fixed; bottom: 0; left: 0; display: flex; justify-content: space-around; align-items: center; background-color: #f4f4f4; border-top: 1vmin solid #0c0c0c; height: 10vmin; width: 100%; }
+a{width: 100vmin; height: 50%;cursor: pointer; border: 1vmin solid #0c0c0c; border-radius: 0.3vmin;display: flex; justify-content: space-around; align-items: center; font-weight: 500;}
+a:any-link{color: #0c0c0c; text-decoration: none;}
+a:hover{opacity: 0.8;}
+.image{background-position: center; background-repeat: no-repeat; background-size: contain; width: 10vmin;}
+.type{width: 100%; height: 20vmin;display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
+.type>label{width: 33%; height: 10vmin; display: flex; justify-content: space-around; align-items: center; flex-direction: column;}
+.type>label>input{width: 1.5vmin; height: 1.5vmin;}
+.type>label>input:checked~.type{box-shadow: 0 0 0 0.2vmin #366ce1 inset;}
+.type>label>.type{width: 5vmin; height: 5vmin; display: block; background-color: #f4f4f4; background-size: 70%; background-position: center; background-repeat: no-repeat;}
+.etype{width: 100%; height: auto; display: flex; justify-content: space-around; align-items: center; flex-direction: row; flex-wrap: wrap;}
+.etype>label{width: 33%; height: 10vmin; display: flex; justify-content: space-around; align-items: center; flex-direction: column;}
+.etype>label>input{width: 1.5vmin; height: 1.5vmin;}
+.etype>label>input:checked~.type{box-shadow: 0 0 0 0.2vmin #366ce1 inset;}
+.etype>label>.type{width: 5vmin; height: 5vmin; display: block; background-color: #f4f4f4; background-size: 70%; background-position: center; background-repeat: no-repeat;}
+.etype>label>.text{font-size: 1.5vmin;}
+#addedslo{width: 10vmin;background-color: #f4f4f4; background-size: contain; background-position: center; background-repeat: no-repeat; display: block; height: 10vmin;}
+</style>
+</head>
+<body>
+<div class="function">
+<a href="../">Back</a>
+</div>
+<div class="content">
+<form action="add.php" method="POST" class="add" enctype="multipart/form-data">
+<div class="tit">Type</div>
+<div class="type">
+<label for="addt1s"><input type="radio" name="addtype" id="addt1s" value="1" required><div class="type" style="background-image:url(../file/object.svg);"></div><div class="text">Object</div></label>
+<label for="addt2s"><input type="radio" name="addtype" id="addt2s" value="2"><div class="type" style="background-image:url(../file/relate.svg);"></div><div class="text">Relate</div></label>
+<label for="addt3s"><input type="radio" name="addtype" id="addt3s" value="3"><div class="type" style="background-image:url(../file/environment.svg);"></div><div class="text">Environment</div></label>
+</div>
+<div class="tit">Title</div>
+<input type="text" name="addtitle" id="addsti" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">E-Type</div>
+<div class="etype">
+<label for="adde1s"><input type="radio" name="addetype" id="adde1s" value="1" required><div class="type" style="background-image:url(../file/text.svg);"></div><div class="text">Text</div></label>
+<label for="adde2s"><input type="radio" name="addetype" id="adde2s" value="2"><div class="type" style="background-image:url(../file/document.svg);"></div><div class="text">Document</div></label>
+<label for="adde3s"><input type="radio" name="addetype" id="adde3s" value="3"><div class="type" style="background-image:url(../file/video.svg);"></div><div class="text">Video</div></label>
+<label for="adde4s"><input type="radio" name="addetype" id="adde4s" value="4"><div class="type" style="background-image:url(../file/photo.svg);"></div><div class="text">Photo</div></label>
+<label for="adde5s"><input type="radio" name="addetype" id="adde5s" value="5"><div class="type" style="background-image:url(../file/music.svg);"></div><div class="text">Music</div></label>
+</div>
+<div class="tit">Skill</div>
+<input type="number" name="addskill" id="addssk" min="1" max="100" placeholder="%" required>
+<div class="tit">Time</div>
+<input type="number" name="addtime" id="addstime" min="1" placeholder="hours" required>
+<div class="tit">Logo</div>
+<input type="file" name="addlogo" id="addslo" accept="image/svg+xml" onchange="fileLogotype();" required>
+<div id="addedslo"></div>
+<input type="submit" value="Add">
+</form>
+</div>
+<script>
+function fileLogotype(e){var el=e ? e.target : window.event.srcElement;
+var file = el.files[0],
+ext = "Not detected",
+parts = file.name.split('.');
+if(parts.length > 1) ext = parts.pop();
+if((file.size/1024)<1024){
+alert(' Successfully uploaded: '+file.name+' - '+(file.size/1024).toFixed(2)+'KB')
+}else if(file.size/1024/1024<10){alert(' Successfully uploaded: '+file.name+' - '+(file.size/1024/1024).toFixed(2)+'MB')}else{file.value='';alert('Uploading error: maximum logotype size - 10MB, this file - '+file.name+' - '+(file.size/1024/1024)+'MB');}
+document.getElementById('addedslo').style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";
+document.getElementById('addedslo').style.height="10vmin"
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<HTML>
+<STYLE>
+*{margin:0;padding:0;font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,sans-serif;}
+HTML{background-color:#fbfbfb;color:#040404;background-color:rgb(251,251,251);color:rgb(4,4,4);font-size:4mm;font-size:1vmax;}
+BODY{width:100%;display:flex;flex-direction:column;align-items:center;}
+div{width:100%;}
+a{width:100%;text-align:inherit;display:block;cursor:pointer;}
+h3,h4{text-align:center;text-indent: 0;}
+img{height: 100%; min-height: 90%;}
+.a{width:100%;display:flex;}
+.d,.v{width:100%;text-align: inherit;}
+.i{width:100%;height: 40vh;display: flex;align-items: center;justify-content: space-around;}
+.l{width: 100%;height:10%;}
+.x{display:none;}
+
+#MENU,#IMAGE{width: 80%;text-align: center;}
+#DATE{position:fixed;left:0;bottom:0;width:100%;font-size:4mm;font-size:1vmax;text-align: center;}
+#ALERT{position:fixed;bottom:0;right:0;width:100%;font-size:4mm;font-size:1vmax;}
+#OPTION{position:fixed;bottom:0;right:0;width:auto;font-size:4mm;font-size:1vmax;text-align: right;cursor: pointer;padding: 1vmin;margin: 1vmin;}
+
+#OPTION.u{border-top:1mm solid #040404;border-top:0.15vmin solid rgb(4,4,4);}
+#IMAGE>div{margin-bottom: 3vmax;margin-top: 2vmax;}
+.i>button{height:100%;cursor: pointer;width: 5%; margin: 3vmax;}
+.i>div{height: 100%;width: 80%;background-position: center;background-size: contain;background-repeat: no-repeat;}
+.a>a{padding:2mm;padding:1vmin;}
+.a>p{padding:2mm;padding:1vmin;width:100%;text-align:center;display:block;border-bottom:1mm solid #040404;border-bottom: 0.2vmin solid rgba(4,4,4);}
+
+#OPTION:hover{border-top:1mm solid #040404;border-top:0.15vmin solid rgb(4,4,4);}
+#OPTION.u:hover{border-top:unset;border-top:unset;}
+.a>a:hover{border-bottom:1mm solid #040404;border-bottom:0.15vmin solid rgb(4,4,4);}
+</STYLE>
+<BODY>
+
+<div id="MENU"><a href="../">Back to the Main Page</a><div class="a"><p>Image</p><a>Text</a><a>Stat</a></div></div>
+<div id="IMAGE">
+<div><div class="d">07-12-2020</div><div class="i"><div style="background-image: url(1.png);"></div></div><div class="v"><span title="kcal">320</span>,<span title="fat">15</span>,<span title="carbohydrate">32</span>,<span title="protein">10</span></div></div>
+</div>
+<div id="FUNCTION">
+<div id="YEAR"><button>2020</button></div>
+<div id="MONTH"><button>6</button><button>7</button><button>8</button><button>9</button></div>
+<div id="DAY"><button>1</button><button>2</button><button>3</button><button>4</button><button>5</button></div>
+<div id="APPLY"></div>
+</div>
+<div id="DATE"></div>
+<div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<!-- <button id="OPTION">Book style</button> -->
+<script>
+var t=[{date:"07-12-2020",url:"1.png",value:"230.23.3.31",rule:"*+kcal.*+fat.*+protein.*+carbohydrates"},{date:"07-12-2020",url:"1.jpg",value:"10",rule:"*+$"},{date:"07-13-2020",url:"2.jpg",value:"5",rule:"*+$"}], x=[];
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function R(){console.log(t);
+
+for(let i=0;i<t.length;i++){var x=t[i].date;
+
+};
+
+}
+document.addEventListener("DOMContentLoaded",R);
+</script>
+</BODY>
+</HTML>
+
+<!-- TEXT -->
+<!-- <STYLE>
+*{margin:0;padding:0;font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,sans-serif;}
+HTML{background-color:#fbfbfb;color:#040404;background-color:rgb(251,251,251);color:rgb(4,4,4);font-size:4mm;font-size:1vmax;}
+BODY{width:100%;display:flex;flex-direction:column;align-items:center;}
+div{width:100%;}
+hr{margin:3vmax}
+a{width:100%;text-align:inherit;display:block;cursor:pointer;}
+h3,h4{text-align:center;text-indent: 0;}
+.a{width:100%;display:flex;}
+.d{width:100%;text-align: inherit;}
+.t{width:100%;text-align: justify;line-height: 1.6;word-spacing: 0.4vmin;font-size:1.5vmax;text-indent: 3vmax;}
+.h,.f{font-size:1.3vmax;text-align:justify;}
+.x{display:none;}
+
+#MENU,#TEXT{width: 80%;margin-bottom: 3vmin;text-align: center;}
+#DATE{position:fixed;left:0;bottom:0;width:100%;font-size:4mm;font-size:1vmax;text-align: center;}
+#ALERT{position:fixed;bottom:0;right:0;width:100%;font-size:4mm;font-size:1vmax;}
+#OPTION{position:fixed;bottom:0;right:0;width:auto;font-size:4mm;font-size:1vmax;text-align: right;cursor: pointer;padding: 1vmin;margin: 1vmin;}
+
+#OPTION.u{border-top:1mm solid #040404;border-top:0.15vmin solid rgb(4,4,4);}
+#TEXT>div{margin-bottom: 3vmax;margin-top: 2vmax;}
+.a>a{padding:2mm;padding:1vmin;}
+.a>p{padding:2mm;padding:1vmin;width:100%;text-align:center;display:block;border-bottom:1mm solid #040404;border-bottom: 0.2vmin solid rgba(4,4,4);}
+
+#OPTION:hover{border-top:1mm solid #040404;border-top:0.15vmin solid rgb(4,4,4);}
+#OPTION.u:hover{border-top:unset;border-top:unset;}
+.a>a:hover{border-bottom:1mm solid #040404;border-bottom:0.15vmin solid rgb(4,4,4);}
+</STYLE>
+<BODY>
+
+<div id="MENU"><a href="../">Back to the Main Page</a><div class="a"><a>Image</a><p>Text</p><a>Stat</a></div></div>
+<div id="TEXT">
+<div><div class="d">There are date</div><div class="t"><h3>Fullfilled day</h3><p>
+One good thing. After long sport match entire tired body come over to rest and felt down to sofa. Wash over cold water and feel calm and healthy. Muscle pain fullfilled from inside everything and even you able to do was think. In theese moments you did not care about everything and able to rest anywhere. Any type of no motion will be complete satisfaction, because your body does not care about everything outside, because all entire body try to regenerate and rebuild themselves.;<br>
+(1.2 Breathing) Presume that it is the first and the main process of animals living. First of all I try to analyze value of breathing and how to count it. Presume that main factors is capacity and interval of reflex breaths. Presume that usually we are fill and use 61.2% of their entire capacity. Else only 38.8% we are refill by one unconscious breath. Importantly we are not possible to select O2 from an air. Presume that the main factor of quality of air and health benefit is matter of breathe area and O2 consistency. It must be not less than 30% and good to be more close to 70%. Breathe and oxygen at all is the main energy booster for body, main approve for this statement is yawn. We do it only when we have no energy, interest  <- knowledge, therefore if we have no knowledge about conversation theme we spend more energy to understand it, and yawn is the main factor of misunderstanding in conversation in this situations it needs to be spread or forgotten in moment.;<br>
+New product - imposed skin. Synthetic area of skin that will apply to bare skin. Glued by mucus to area and speed up process of regeneration and protect bared skin area. Process of regeneration will be improved because one stage of regeneration damaged skin area is creating skin layer. This synthethic skin will remove this stage. Main rule for making it real and scaling is to make instruction of desinfecting damaged area. Clean by hydrogen peroxide area and wipe up by alchohol rag. Inflict synthethic skin wait 1 minute and back to normal.;<br>
+Today I need to think about racism, because there are sensational accident with George Floyd. All of theese thoughts only assumption and I do not prove it at all. First of all I think there are difference between colors, but I think it is unique characteristic. That I will see only in good and positive way. Presume that white or close to white color skin people more egoistic at all. Presume that black or close to black skin color people think more about ego of others. Presume that all human colors separated to 2 parts. Hair and skin. All theese colors cotain 3 colors - blue, red, yellow. Dark brown contain more colors, therefore light beige contain less colors. Every color contain own sense and idea. Everyone has a different perception of colors and their association. Presume that big publicity of racism to black or close to black skin color people connected to society and proximity of them in genome. Every black or close to black skin color human most of all want to unite everyone no matter why. On the other side white or close to white skin color human like to separate but for idea. [Personally for me - I find idea, why everyone need to be unique and only in unique be united. The main reason why I am keeping and believing idea of united is watching to source and to the deepest point of view. I try to watch to kind as one same watch to mammals as same and to animals as same even to all alive. As closer to white color, I presume that I need to find idea to be united. I believe that I am on right way.] I did not want to said that this police officers are dangerous and mentally unhealthy, because this is already understandable. I want to think how to solve this problem at all. I believe that if officers will work together in pairs white and black, they will be more objective and if they work like that then situations of this kind will simply not happened. Else I do not understand why so much effort was made in the process of arrest. There must be a decree or a legislative prohibition on pressure at the junction of the body and head, I mean on the neck it is just not humane.[For sure for me personally no one has the right to harm another. It is illegitimate and unfair. Shockers, nets with a calibrated dose so as not to cause harm if it is really needed. First of all, all law enforcement officers should first of all apply mental, diplomatic and communicative abilities based on the skills and knowledge of psychology and the department of neurolinguistics.] Presume that if there must be a woman in the squad to make it fair enought. Presume that it must be certified by the students and doctors of socio science.;
+</p></div><div class="h"><h4>Links:</h4><a href="https://elephrame.com/textbook/BLM">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a><a href="https://elephrame.com/textbook/BLM">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div><div class="f"><h4>File:</h4><a href="https://elephrame.com/textbook/BLM">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div></div>
+<div><div class="d">There are date</div><div class="t"><h3>Fullfilled day</h3><p>
+One good thing. After long sport match entire tired body come over to rest and felt down to sofa. Wash over cold water and feel calm and healthy. Muscle pain fullfilled from inside everything and even you able to do was think. In theese moments you did not care about everything and able to rest anywhere. Any type of no motion will be complete satisfaction, because your body does not care about everything outside, because all entire body try to regenerate and rebuild themselves.;<br>
+(1.2 Breathing) Presume that it is the first and the main process of animals living. First of all I try to analyze value of breathing and how to count it. Presume that main factors is capacity and interval of reflex breaths. Presume that usually we are fill and use 61.2% of their entire capacity. Else only 38.8% we are refill by one unconscious breath. Importantly we are not possible to select O2 from an air. Presume that the main factor of quality of air and health benefit is matter of breathe area and O2 consistency. It must be not less than 30% and good to be more close to 70%. Breathe and oxygen at all is the main energy booster for body, main approve for this statement is yawn. We do it only when we have no energy, interest  <- knowledge, therefore if we have no knowledge about conversation theme we spend more energy to understand it, and yawn is the main factor of misunderstanding in conversation in this situations it needs to be spread or forgotten in moment.;<br>
+New product - imposed skin. Synthetic area of skin that will apply to bare skin. Glued by mucus to area and speed up process of regeneration and protect bared skin area. Process of regeneration will be improved because one stage of regeneration damaged skin area is creating skin layer. This synthethic skin will remove this stage. Main rule for making it real and scaling is to make instruction of desinfecting damaged area. Clean by hydrogen peroxide area and wipe up by alchohol rag. Inflict synthethic skin wait 1 minute and back to normal.;<br>
+Today I need to think about racism, because there are sensational accident with George Floyd. All of theese thoughts only assumption and I do not prove it at all. First of all I think there are difference between colors, but I think it is unique characteristic. That I will see only in good and positive way. Presume that white or close to white color skin people more egoistic at all. Presume that black or close to black skin color people think more about ego of others. Presume that all human colors separated to 2 parts. Hair and skin. All theese colors cotain 3 colors - blue, red, yellow. Dark brown contain more colors, therefore light beige contain less colors. Every color contain own sense and idea. Everyone has a different perception of colors and their association. Presume that big publicity of racism to black or close to black skin color people connected to society and proximity of them in genome. Every black or close to black skin color human most of all want to unite everyone no matter why. On the other side white or close to white skin color human like to separate but for idea. [Personally for me - I find idea, why everyone need to be unique and only in unique be united. The main reason why I am keeping and believing idea of united is watching to source and to the deepest point of view. I try to watch to kind as one same watch to mammals as same and to animals as same even to all alive. As closer to white color, I presume that I need to find idea to be united. I believe that I am on right way.] I did not want to said that this police officers are dangerous and mentally unhealthy, because this is already understandable. I want to think how to solve this problem at all. I believe that if officers will work together in pairs white and black, they will be more objective and if they work like that then situations of this kind will simply not happened. Else I do not understand why so much effort was made in the process of arrest. There must be a decree or a legislative prohibition on pressure at the junction of the body and head, I mean on the neck it is just not humane.[For sure for me personally no one has the right to harm another. It is illegitimate and unfair. Shockers, nets with a calibrated dose so as not to cause harm if it is really needed. First of all, all law enforcement officers should first of all apply mental, diplomatic and communicative abilities based on the skills and knowledge of psychology and the department of neurolinguistics.] Presume that if there must be a woman in the squad to make it fair enought. Presume that it must be certified by the students and doctors of socio science.;
+</p></div><div class="h"><h4>Links:</h4><a href="https://elephrame.com/textbook/BLM">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a><a href="https://elephrame.com/textbook/BLM">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div><div class="f"><h4>File:</h4><a href="https://elephrame.com/textbook/BLM">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div></div>
+
+
+</div>
+<div id="DATE"></div>
+<div id="ALERT">Page using JavaScript and Hypertext Prepocessor</div>
+<button id="OPTION">Book style</button>
+<script>
+
+var n=new Date(),y=parseInt(n.getFullYear()),d=parseInt(n.getDate()),m=parseInt(n.getMonth())+1;
+function date(x,y,z){if(y<10){y='0'+y}if(z<10){z='0'+z}if(x<10){x='0'+x};return x+'-'+y+'-'+z};
+DATE.innerHTML=date(m,d,y);
+function R(){var c=TEXT.getElementsByClassName('t');for(var i=0;i<c.length;i++){var C=c[i].innerHTML;C=C.replace(/•/g, '</p><hr><p>');C=C.replace(/○/g, '<br>');C=C.replace(/\(/g, '<b> ');C=C.replace(/\)/g, ' </b>');C=C.replace(/\[/g, '<i> ');C=C.replace(/\]/g, ' </i>');c[i].innerHTML=C;}}
+function U(){OPTION.classList.toggle('u');MENU.classList.toggle('x');DATE.classList.toggle('x');ALERT.classList.toggle('x');V('h');V('f');}
+OPTION.addEventListener("click",U);
+function V(e){for(var i=0;i<TEXT.getElementsByClassName(e).length;i++){TEXT.getElementsByClassName(e)[i].classList.toggle('x')}}
+document.addEventListener("DOMContentLoaded",R);
+</script>
+</BODY> -->

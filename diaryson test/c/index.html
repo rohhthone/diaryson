@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>CC Profile</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="author" content="suicvairduCConstantinius">
+<meta name="format-detection" content="telephone=no">
+<script>
+const user=[1,'cc','Cost','Cest',new Date(2000,7,31,16),'59.82851, 30.4191016'];
+</script>
+<style>
+*{margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 1.4vmax;}
+.f1x{display: flex; justify-content: space-around; align-items: center;}.fdc{flex-direction: column;}.fdrc{flex-direction: column-reverse;}
+.h1d{display: none;}
+.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}
+
+body{display: flex; flex-direction: column; align-items: center; color: #f4f4f4;}
+.content{ width: 100vmin; max-height: auto; min-height: 100vh; background-color: #0c0c0c; display: flex; flex-wrap: wrap; justify-content: space-between;}
+.titleson{width: 100%; height: auto; text-align: center; font-weight: 600; border-bottom: 0.1vmin solid #f4f4f4;}
+.tit{width: 100%; height: auto; text-align: center;}
+input{width: 100%;}
+input[type="submit"]{cursor: pointer;}
+form{width: 45%; height: 35vmin; display: flex; flex-direction: column; justify-content: space-around; align-items: center; }
+.function{position: fixed; bottom: 0; left: 0; display: flex; justify-content: space-around; align-items: center; background-color: #f4f4f4; border-top: 1vmin solid #0c0c0c; height: 10vmin; width: 100%; }
+a{width: 100vmin; height: 50%;cursor: pointer; border: 1vmin solid #0c0c0c; border-radius: 0.3vmin;display: flex; justify-content: space-around; align-items: center; font-weight: 500;}
+a:any-link{color: #0c0c0c; text-decoration: none;}
+a:hover{opacity: 0.8;}
+.image{background-position: center; background-repeat: no-repeat; background-size: contain; width: 10vmin;}
+</style>
+</head>
+<body>
+<div class="function">
+<a href="../">Back</a>
+</div>
+<div class="content">
+<form action="aadd.php" method="POST" class="add" enctype="multipart/form-data">
+<div class="titleson">Account</div>
+<div class="tit">Name</div>
+<input type="text" name="addname" id="addan" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Hyperlink</div>
+<input type="url" name="addurl" id="addau" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Logotype</div>
+<input type="file" name="addlogo" id="addal" accept="image/svg+xml" onchange="fileLogotype();" required>
+<div id="addedal" class="image"></div>
+<input type="submit" value="Add">
+</form>
+<form action="eadd.php" method="POST" class="add" enctype="multipart/form-data">
+<div class="titleson">E-mail</div>
+<div class="tit">Name</div>
+<input type="text" name="addname" id="adden" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">E-mail</div>
+<input type="email" name="addurl" id="addeu" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Logotype</div>
+<input type="file" name="addlogo" id="addel" accept="image/svg+xml" onchange="fileLogotype();" required>
+<div id="addedel" class="image"></div>
+<input type="submit" value="Add">
+</form>
+<form action="ladd.php" method="POST" class="add" enctype="multipart/form-data">
+<div class="titleson">Location</div>
+<div class="tit">Name</div>
+<input type="text" name="addname" id="addln" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Location</div>
+<input type="text" name="addurl" id="addlu" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Logotype</div>
+<input type="file" name="addlogo" id="addll" accept="image/svg+xml" onchange="fileLogotype();" required>
+<div id="addedll" class="image"></div>
+<input type="submit" value="Add">
+</form>
+<form action="padd.php" method="POST" class="add" enctype="multipart/form-data">
+<div class="titleson">Phone</div>
+<div class="tit">Name</div>
+<input type="text" name="addname" id="addpn" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Phone</div>
+<input type="tel" name="addurl" id="addpu" minlength="4" maxlength="123" placeholder="min - 4, max-123" required>
+<div class="tit">Logotype</div>
+<input type="file" name="addlogo" id="addpl" accept="image/svg+xml" onchange="fileLogotype();" required>
+<div id="addedpl" class="image"></div>
+<input type="submit" value="Add">
+</form>
+</div>
+<script>
+function fileLogotype(e){var el=e ? e.target : window.event.srcElement;
+var file = el.files[0],
+ext = "Not detected",
+parts = file.name.split('.');
+if(parts.length > 1) ext = parts.pop();
+if((file.size/1024)<1024){
+alert(' Successfully uploaded: '+file.name+' - '+(file.size/1024).toFixed(2)+'KB')
+}else if(file.size/1024/1024<10){alert(' Successfully uploaded: '+file.name+' - '+(file.size/1024/1024).toFixed(2)+'MB')}else{file.value='';alert('Uploading error: maximum logotype size - 10MB, this file - '+file.name+' - '+(file.size/1024/1024)+'MB');}
+if(el===document.getElementById('addal')){document.getElementById('addedal').style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";document.getElementById('addedal').style.height="10vmin"}
+if(el===document.getElementById('addel')){document.getElementById('addedel').style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";document.getElementById('addedel').style.height="10vmin"}
+if(el===document.getElementById('addll')){document.getElementById('addedll').style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";document.getElementById('addedll').style.height="10vmin"}
+if(el===document.getElementById('addpl')){document.getElementById('addedpl').style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";document.getElementById('addedpl').style.height="10vmin"}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<script>
+let buttonlogo='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340"><title>Button</title><rect class="b" width="340" height="340" rx="31"/><rect class="a f" x="149" y="20" width="40" height="300" rx="20"/><rect class="a l" x="149" y="20" width="40" height="300" rx="20"/></svg>';
+</script>
+<style>
+.a{fill:#0c0c0c;}.b{fill:#f4f4f4;}
+
+.right{width: 50vw; height: 100vh; position: fixed; right: 0; display:flex; justify-content:space-around; align-items:center;} 
+.left{width: 50vw; height: 100vh; position: fixed; left: 0; display:flex; justify-content:space-around; align-items:center;} 
+
+.v{cursor:pointer;}
+.v>input{width: 0; height: 0; opacity: 0;}
+.v>svg{width: 33vmin; height: 33vmin; cursor: pointer; }
+.v>svg>.a{transition:transform 1s; display: flex;align-items: center; justify-content: space-around;}
+.v:hover>svg>.a.l{transform:translate(35%, -12.5%) rotate(20deg)}
+.v:hover>svg>.a.f{transform:translate( -26%, 21.5%) rotate(-20deg)}
+.v>input{width: 0; height: 0; opacity: 0;}
+.v>input:checked ~ svg>.a.l{transform:translate(35%, -12.5%) rotate(20deg)}
+.v>input:checked ~ svg>.a.f{transform:translate( -26%, 21.5%) rotate(-20deg)}
+
+.x{cursor:pointer;}
+.x>svg>.a{transition:transform 1s; display: flex;align-items: center; justify-content: space-around;}
+.x>svg{width: 33vmin; height: 33vmin;}
+.x:hover>svg>.a.l{transform:translate(50%, -20%) rotate(45deg)}
+.x:hover>svg>.a.f{transform:translate( -20%, 50%) rotate(
+-45deg)}
+.x>input{width: 0; height: 0; opacity: 0;}
+.x>input:checked ~ svg>.a.l{transform:translate(50%, -20%) rotate(45deg)}
+.x>input:checked ~ svg>.a.f{transform:translate( -20%, 50%) rotate(-45deg)}
+</style>
+<div class="right">
+<div class="x"><input type="checkbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340"><title>Check</title><rect class="b" width="340" height="340" rx="31"/><rect class="a f" x="149" y="20" width="40" height="300" rx="20"/><rect class="a l" x="149" y="20" width="40" height="300" rx="20"/></svg></div>
+</div>
+<div class="left">
+<div class="v"><input type="checkbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340"><title>Drop</title><rect class="b" width="340" height="340" rx="31"/><rect class="a f" x="149" y="20" width="40" height="300" rx="20"/><rect class="a l" x="149" y="20" width="40" height="300" rx="20"/></svg></div>
+</div>
+</html>

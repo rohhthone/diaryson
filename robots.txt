@@ -1,0 +1,7 @@
+# Allies refer
+User-agent: *
+Disallow: /admin
+Disallow: /message
+Disallow: /profile
+Sitemap: https://diaryson.info/sitemap.xml
+Crawl-delay: 16

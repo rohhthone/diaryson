@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>CC Profile</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="author" content="suicvairduCConstantinius">
+<meta name="format-detection" content="telephone=no">
+<script>
+const dir="../files/";
+var doc1={
+id:1,
+name:"a19.pdf",
+size:"189KB",
+time:"21.03.2000",
+},doc2={
+id:2,
+name:"file.raw",
+size:"189KB",
+time:"21.03.2000",
+},doc3={
+id:3,
+name:"file.doc",
+size:"101KB",
+time:"21.03.2000",
+};
+var files=[doc1,doc2,doc3];
+function loadContent(){
+for(var i=0;i<files.length;i++){
+var l=files[i].name;
+l=l.split('.'); 
+
+document.getElementsByClassName('content')[0].innerHTML+='<div class="item"><div class="name">'+l[0]+'</div><a class="download" href="'+dir+files[i].name+'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340.399"><title>Download</title><rect class="a" y="0.399" width="100%" height="100%"/><path class="b" d="M340,171.42V319.06a21.259,21.259,0,0,1-21.26,21.26H89.77v-.16H21.26A21.259,21.259,0,0,1,0,318.9V171.42a21.259,21.259,0,0,1,21.26-21.26H68.74A21.259,21.259,0,0,1,90,171.42v57.64a21.259,21.259,0,0,0,21.26,21.26H228.74A21.259,21.259,0,0,0,250,229.06V171.42a21.259,21.259,0,0,1,21.26-21.26h47.48A21.259,21.259,0,0,1,340,171.42Z"/><path class="b" d="M267.477,115.823l-83.388,83.388a19.925,19.925,0,0,1-28.178,0l-9.051-9.051-21.97-21.97L72.523,115.823a9.175,9.175,0,0,1,6.488-15.663h36.5a9.379,9.379,0,0,0,9.379-9.379V19.926A19.926,19.926,0,0,1,144.816,0h50.149A19.926,19.926,0,0,1,214.89,19.926V90.781a9.379,9.379,0,0,0,9.379,9.379h36.72A9.175,9.175,0,0,1,267.477,115.823Z"/></svg></a><div class="information"><span class="name">'+l[0]+'</span><span class="type">'+l[1]+'</span><span class="size">'+files[i].size+'</span></div><div class="info" onclick="changeType();">Info</div></div>';
+}
+}
+</script>
+<style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style>
+<style>
+*{margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 1.4vmax;}
+.f1x{display: flex; justify-content: space-around; align-items: center;}
+.h1d{display: none;}
+
+.functions{position: fixed;}
+.functions>.left{top: 0; left: 0; background-color: #f4f4f4; width: 10vw; height: 100vh; display: flex; align-items: center; justify-content: space-around;}
+.functions>div>.button{width: 8vmin; height: 8vmin; transition: 1s;}
+.functions>div>.button:hover{cursor: pointer; transform: scale(0.9);}
+
+.content{width: 80vw; height: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; margin-left: 10vw;}
+.content>.item{width: 20vmin; height: 20vmin; margin: 3vmin; border: 1vmin solid #0c0c0c; display: flex; align-items: center; justify-content: space-around; flex-direction: column; border-radius: 1vmin;background-color: #0c0c0c;}
+.content>.item>.download{width: 20vmin; height: 10vmin; display: flex; align-items: center; justify-content: space-around; background-color: #f4f4f4;}
+.content>.item>.download>svg{width: 8vmin; height: 8vmin; transition: 1s;}
+.content>.item>.download>svg:hover{cursor: pointer; transform: scale(0.9);}
+.content>.item>.name{width: 100%; height: 5vmin;display: flex; align-items: center; justify-content: space-around; background-color: #0c0c0c; color: #f4f4f4;}
+.content>.item>.info{width: 100%; height: 5vmin;display: flex; align-items: center; justify-content: space-around; background-color: #0c0c0c; color: #f4f4f4;}
+.content>.item>.info:hover{cursor: pointer; font-weight: 600;}
+.content>.item>.information{display: none;}
+.content>.item.i>.information{display: flex; justify-content: space-around; align-items: center; flex-direction: column;width: 20vmin; height: 10vmin; background-color: #f4f4f4; color: #0c0c0c;}
+.content>.item.i>.information>span{border-top: 0.1vmin solid #0c0c0c;}
+.content>.item.i>.information>span:first-child{border:unset}
+.content>.item.i>.download{display: none;}
+
+@media screen and (max-width: 70vh) {
+.functions>.left{top: 0; left: 0; width: 100vw; height: 10vmin; position: fixed;}
+.functions>div>.button{transform: rotate(90deg);}
+.content{margin-left: unset; margin-top: 10vmin; width: 100vw;}}
+</style>
+</head>
+<body onload="loadContent();">
+<div class="functions">
+<div class="left"><div class="button" id="backbutton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.355 340.158"><title>Back</title><rect class="a" x="1.036" width="340.157" height="340.157"/><path class="b" d="M341.355,126.417v87.64a21.259,21.259,0,0,1-21.26,21.26H202.729a6.964,6.964,0,0,0-6.964,6.964v72.006c0,23-27.8,34.52-44.066,18.265Q79.637,260.534,7.565,188.507a25.832,25.832,0,0,1-.01-36.52L151.685,7.777c16.26-16.27,44.08-4.76,44.08,18.25V98.194a6.963,6.963,0,0,0,6.964,6.963H320.1A21.26,21.26,0,0,1,341.355,126.417Z"/></svg></div></div>
+<div class="right"></div>
+</div>
+<div class="content"></div>
+<script>
+backbutton.onclick=function(){location.href='../'}
+function downloadDoc(e){
+var el=e ? e.target : window.event.srcElement;
+}
+function changeType(e){
+var el=e ? e.target : window.event.srcElement;
+el.parentNode.classList.toggle('i');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<html>
+<head>
+<title>CC Profile</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="author" content="suicvairduCConstantinius">
+<meta name="format-detection" content="telephone=no">
+<script>
+const dir="../files/";
+const nn="cc";
+var audio1={
+id:1,
+title:"a",
+album:"a",
+audio:"a.mp3",
+cover:"cover.jpg",
+date:"09.10.2019"
+}, audio2={
+id:2,
+title:"a",
+album:"a",
+audio:"a.mp3",
+cover:"cover.jpg",
+date:"09.10.2019"
+}, audio3={
+id:3,
+title:"a",
+album:"a",
+audio:"a.mp3",
+cover:"cover.jpg",
+date:"09.10.2019"
+};
+var files=[audio1,audio2,audio3];
+function loadContent(){
+playercover.style.backgroundImage='url('+files[0].cover+')';
+player.src=files[0].audio;
+playerauth.innerHTML+='<span>'+files[0].title+'</span>';
+playerauth.innerHTML+='<span>'+nn+'</span>';
+playerauth.innerHTML+='<span>'+files[0].album+'</span>';
+for(let i=0; i<files.length;i++){
+if(files[i].id===1){
+playerlist.innerHTML+='<div class="item used" data-id="'+files[i].id+'" id="audio'+files[i].id+'"  style="background-image: url('+files[i].cover+')" onclick="openFile();">'+files[i].title+' - '+files[i].album+'</div>';
+} else {playerlist.innerHTML+='<div class="item" data-id="'+files[i].id+'" id="audio'+files[i].id+'"  style="background-image: url('+files[i].cover+')" onclick="openFile();">'+files[i].title+' - '+files[i].album+'</div>';}
+}
+player.volume=0.5;
+}
+function openFile(e) {
+if(play_btn.classList.contains('h1d')){
+player.pause();
+pause_btn.classList.toggle('h1d');
+play_btn.classList.toggle('h1d');
+} else {}
+var elem=e ? e.target : window.event.srcElement;
+if (elem.classList.contains('used')){
+} else { 
+for(let i=0; i<document.getElementsByClassName('item').length;i++){
+if(document.getElementsByClassName('item')[i].classList.contains('used')){document.getElementsByClassName('item')[i].classList.toggle('used')}else{}
+}
+let o = elem.dataset.id;
+o=parseInt(o)-1;
+playercover.style.backgroundImage='url('+files[o].cover+')';
+player.src=files[o].audio;
+elem.classList.toggle('used');
+}
+}
+</script>
+<style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style>
+<style>
+*{margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 1.4vmax;}
+.f1x{display: flex; justify-content: space-around; align-items: center;}
+.h1d{display: none;}
+
+.functions>.left{top: 0; left: 0; background-color: #f4f4f4; width: 10vmin; height: 100vh; display: flex; align-items: center; justify-content: space-around; position: fixed;}
+.functions>.right{bottom: 0; right: 0; background-color: #f4f4f4; width: 10vmin; height: 100vh; display: flex; align-items: center; justify-content: space-around; position: fixed;}
+.functions>div>.button{width: 8vmin; height: 8vmin; transition: 1s;}
+.functions>div>.button:hover{cursor: pointer; transform: scale(0.9);}
+
+.item{background-repeat: no-repeat; background-size: 100%; background-position: center; cursor: pointer;}
+.used{opacity: 0.7; cursor: none;}
+
+.volume{width: 100%;height: 100%; display: flex;  align-items: center; flex-direction: column;}
+.volume>.icon{height: 10vmin; width: 10vmin; transform: rotate(-90deg); display: flex; justify-content: space-around; align-items: center;  margin-top:15vmax;} 
+#volumeline{width: 30vmax; margin-top: 15vmax;transform: rotate(-90deg);}
+.icon>svg{width: 8vmin; height: 8vmin;}
+input[type=range] {-webkit-appearance: none;width: 100%;background: transparent;}
+input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;}
+input[type=range]:focus {outline: none;}
+input[type=range]::-ms-track {width: 100%;cursor: pointer;background: transparent; border-color: transparent;color: transparent;}
+input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;height: 1.5vmax;
+width: 1.5vmax;border: 0.5vmin solid #0c0c0c;border-bottom-right-radius: 0.5vmin;border-bottom-left-radius: 0.5vmin;background: #f4f4f4;cursor: pointer;}input[type=range]:focus::-webkit-slider-thumb {-webkit-appearance: none;height: 1.5vmax;width: 1.5vmax;border: 0.5vmin solid #0c0c0c;border-bottom-right-radius: 0.5vmin;border-bottom-left-radius: 0.5vmin;background: #0c0c0c;cursor: pointer;}
+input[type=range]::-moz-range-thumb {height: 1.5vmax;width: 1.5vmax;
+border: 1vmin solid #0c0c0c;border-radius: 50%;background: #f4f4f4;cursor: pointer;}
+input[type=range]::-ms-thumb {height: 1.5vmax;width: 1.5vmax;border: 1vmin solid #0c0c0c;border-radius: 50%;background: #f4f4f4;cursor: pointer;}
+input[type=range]::-webkit-slider-runnable-track {width: 100%;height: 1vmin;cursor: pointer;background: #0c0c0c;border-radius: 0.3vmin;}
+input[type=range]:focus::-webkit-slider-runnable-track {background: #3c3c3c;}
+input[type=range]::-moz-range-track {width: 100%;height: 1vmin;cursor: pointer;background: #0c0c0c;border-radius: 0.3vmin;}
+input[type=range]::-ms-track {width: 100%;height: 1vmin;cursor: pointer;background: transparent;border-color: transparent;color: transparent;}
+input[type=range]::-ms-fill-lower {background: #0c0c0c;border-radius: 0.3vmin;}
+input[type=range]:focus::-ms-fill-lower {background: #3c3c3c;}
+input[type=range]::-ms-fill-upper {background: #0c0c0c;}
+input[type=range]:focus::-ms-fill-upper {background: #3c3c3c;}
+.list::-webkit-scrollbar {width: 1vmax;}
+.list::-webkit-scrollbar-track {background: #f4f4f4;}
+.list::-webkit-scrollbar-thumb {background: #c3c3c3;border-radius: 0.3vmin;}
+.list::-webkit-scrollbar-thumb:hover {background: #c0c0c0;}
+
+.option{width: 100%;height: 10vh;background-color: #f4f4f4;display: flex;justify-content: space-around;align-items: center;position: fixed;bottom: 0;}
+.option>.button{background-color: #0c0c0c;width: 3vh;height: 3vh;background-position: center;background-size: 100%;background-repeat: no-repeat;}
+.option>.value{background-color: #0c0c0c;width: 6vmax;height: 3vmin;border-radius: 0.3vmin;}
+#timeline{width: 60%;}
+#time{display: flex; justify-content: space-around; align-items: center;}
+#time>span{background-color: transparent; color: #f4f4f4;width: 50%; height: auto; text-align: center;}
+
+.content{position: fixed; top: 0; left: 10vw; width: 80vw; height: 90vh;}
+.content>div{width: 100%; height: 50%;}
+.content>.files{overflow-y: auto;display: flex; flex-direction: column;}
+.content>.files>.item{width: 100%; height: 10vh; background-color: #0c0c0c; background-repeat: no-repeat; background-position: center; background-size: 100%; margin-top: 1vmax; border-radius: 0.3vmin; display: flex; justify-content: space-around; align-items: center; font-size: 3vmax; font-weight: 500;}
+.content>.file{display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;}
+.content>.file>div{width: 50%; height: 100%;}
+.content>.file>.cover{background-position: center; background-repeat: no-repeat; background-size: contain;}
+.content>.file>.auth{display: flex; justify-content: space-around; align-items: center; flex-direction: column;}
+.content>.file>.auth>span{width: 100%; height: 33%; display: flex; justify-content: space-around; align-items: center;}
+
+@media screen and (max-width: 70vh) {
+.content>.file>div{width: 100%; height: 50%;}
+.functions>.left{top: 0; left: 0; width: 100vw; height: 10vmin; position: fixed;}
+.functions>div>.button{transform: rotate(90deg);}
+}
+</style>
+</head>
+<body onload="loadContent();">
+<audio id="player" preload="auto"><source src="" type="audio/mp3" id="playersource"></source><p>Please enable JavaScript, or upgrade your web browser.</p></audio>
+<div class="functions">
+<div class="left"><div class="button" id="backbutton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.355 340.158"><title>Back</title><rect class="a" x="1.036" width="340.157" height="340.157"/><path class="b" d="M341.355,126.417v87.64a21.259,21.259,0,0,1-21.26,21.26H202.729a6.964,6.964,0,0,0-6.964,6.964v72.006c0,23-27.8,34.52-44.066,18.265Q79.637,260.534,7.565,188.507a25.832,25.832,0,0,1-.01-36.52L151.685,7.777c16.26-16.27,44.08-4.76,44.08,18.25V98.194a6.963,6.963,0,0,0,6.964,6.963H320.1A21.26,21.26,0,0,1,341.355,126.417Z"/></svg></div></div>
+<div class="right">
+<div class="volume"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.315"><defs><style>.a{fill:#f4f4f4;}.b,.c{fill:#0c0c0c;}.c{opacity:0.50;}</style></defs><title>round</title><rect class="a" y="0.157" width="100%" height="100%"/><circle class="b" cx="170" cy="170.157" r="70"/><circle class="c" id="soundcolor" cx="170.079" cy="170.079" r="170.079"/><rect class="a" y="0.157" width="170" height="340"/><rect class="b" y="100.157" width="140" height="140"/><path class="b" d="M170.079.157C76.791.177.043,76.915,0,170.157c-.043,93.3,76.732,170.139,170.079,170.158Z"/></svg></div><input type="range" id="volumeline" name="volumeline" value="50" max="100" min="0"></div>
+</div>
+</div>
+<div class="content"><div class="files" id="playerlist"></div><div class="file"><div class="cover" id="playercover"></div><div class="auth" id="playerauth"></div></div></div>
+<div class="option">
+<div class="button" id="play_btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340"><title>Play</title><rect class="a" width="100%" height="100%"/><path class="b" d="M0,23.055V316.941a23.04,23.04,0,0,0,33.828,20.347l293.919-155.65a23.021,23.021,0,0,0-.977-41.183L32.851,2.22A23.039,23.039,0,0,0,0,23.055Z"/></svg>
+</div>
+<div class="button h1d" id="pause_btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.157"><title>Pause</title><rect class="a" width="100%" height="100%"/><rect class="b" width="130" height="340.157" rx="21.26"/><rect class="b" x="210" width="130" height="340.157" rx="21.26"/></svg>
+</div>
+<div class="button" id="step_btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.157"><title>Next</title><rect class="a" width="100%" height="100%"/><rect class="b" x="210.662" width="129.496" height="340.157" rx="21.26"/><path class="b" d="M0,25.191V314.966C0,336.7,25.462,348.2,41.492,333.7L201.716,188.741a25.313,25.313,0,0,0-.009-37.466L41.484,6.454C25.451-8.037,0,3.459,0,25.191Z"/></svg>
+</div>
+<div class="value" id="time">
+<span id="timenow">0</span>
+<span id="timeall">0</span>
+</div>
+<input type="range" id="timeline" name="timeline" value="0">
+<div class="button" id="full_btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.157"><title>Full</title><rect class="a" width="100%" height="100%"/><rect class="b" y="120" width="90" height="220" rx="21.26"/><rect class="b" x="250" width="90" height="220" rx="21.26"/><rect class="b" width="220" height="90" rx="21.26"/><rect class="b" x="120" y="250" width="220" height="90" rx="21.26"/><rect class="b" x="120" y="120" width="100" height="100" rx="21.26" transform="translate(340) rotate(90)"/></svg>
+</div>
+<div class="button h1d" id="unfull_btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.157"><title>Unfull</title><rect class="a" width="100%" height="100%"/><rect class="b" y="120" width="90" height="220" rx="21.26"/><rect class="b" x="250" width="90" height="220" rx="21.26"/><rect class="b" width="220" height="90" rx="21.26"/><rect class="b" x="120" y="250" width="220" height="90" rx="21.26"/></svg>
+</div>
+</div>
+<script>
+backbutton.onclick=function(){location.href='../'}
+play_btn.onclick = function() {
+player.play();
+play_btn.classList.toggle('h1d');
+pause_btn.classList.toggle('h1d');
+timeall.innerHTML = (player.duration).toFixed(0);
+timeline.max=player.duration;
+}
+pause_btn.onclick = function() {
+if(play_btn.classList.contains('h1d')){
+player.pause();
+pause_btn.classList.toggle('h1d');
+play_btn.classList.toggle('h1d');
+} else {}
+}
+step_btn.onclick = function() {
+player.pause();
+let u=0;
+for(let i=0; i<document.getElementsByClassName('item').length;i++){
+if(document.getElementsByClassName('item')[i].classList.contains('used')){
+u=i;
+}
+}
+if(u==(document.getElementsByClassName('item').length-1)){
+playercover.style.backgroundImage='url('+files[0].cover+')';
+playerauth.innerHTML='';
+playerauth.innerHTML+='<span>'+files[0].title+'</span>';
+playerauth.innerHTML+='<span>'+nn+'</span>';
+playerauth.innerHTML+='<span>'+files[0].album+'</span>';
+player.src=files[0].audio;
+document.getElementsByClassName('item')[u].classList.toggle('used');
+document.getElementsByClassName('item')[0].classList.toggle('used');
+} else {
+playercover.style.backgroundImage='url('+files[u+1].cover+')';
+playerauth.innerHTML='';
+playerauth.innerHTML+='<span>'+files[u+1].title+'</span>';
+playerauth.innerHTML+='<span>'+nn+'</span>';
+playerauth.innerHTML+='<span>'+files[u+1].album+'</span>';
+player.src=files[u+1].audio;
+document.getElementsByClassName('item')[u].classList.toggle('used');
+document.getElementsByClassName('item')[u+1].classList.toggle('used');
+}
+player.play();
+if(play_btn.classList.contains('h1d')){
+
+}else{
+pause_btn.classList.toggle('h1d');
+play_btn.classList.toggle('h1d');
+}
+timeall.innerHTML = (player.duration).toFixed(0);
+timeline.max=player.duration;
+}
+full_btn.onclick = function() {
+var fullscreen = player.webkitRequestFullscreen || player.mozRequestFullScreen || player.requestFullscreen || player.msRequestFullscreen;
+fullscreen.call(player);
+full_btn.classList.toggle('h1d');
+unfull_btn.classList.toggle('h1d');
+}
+unfull_btn.onclick = function() {
+var unfullscreen = document.exitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+unfullscreen.call(document);
+unfull_btn.classList.toggle('h1d');
+full_btn.classList.toggle('h1d');
+}
+player.ontimeupdate = function() {
+timenow.innerHTML = (player.currentTime).toFixed(0);
+timeline.value = player.currentTime;
+if(player.currentTime==player.duration){
+player.pause();
+let u=0;
+for(let i=0; i<document.getElementsByClassName('item').length;i++){
+if(document.getElementsByClassName('item')[i].classList.contains('used')){
+u=i;
+}
+}
+if(u==(document.getElementsByClassName('item').length-1)){
+playercover.style.backgroundImage='url('+files[0].cover+')';
+playerauth.innerHTML='';
+playerauth.innerHTML+='<span>'+files[0].title+'</span>';
+playerauth.innerHTML+='<span>'+nn+'</span>';
+playerauth.innerHTML+='<span>'+files[0].album+'</span>';
+player.src=files[0].audio;
+document.getElementsByClassName('item')[u].classList.toggle('used');
+document.getElementsByClassName('item')[0].classList.toggle('used');
+} else {
+playercover.style.backgroundImage='url('+files[u+1].cover+')';
+playerauth.innerHTML='';
+playerauth.innerHTML+='<span>'+files[u+1].title+'</span>';
+playerauth.innerHTML+='<span>'+nn+'</span>';
+playerauth.innerHTML+='<span>'+files[u+1].album+'</span>';
+player.src=files[u+1].audio;
+document.getElementsByClassName('item')[u].classList.toggle('used');
+document.getElementsByClassName('item')[u+1].classList.toggle('used');
+}
+player.play();
+timeall.innerHTML = (player.duration).toFixed(0);
+timeline.max=player.duration;
+} else{
+}
+}
+timeline.onclick= function() {
+player.currentTime = timeline.value;
+timenow.innerHTML = (player.currentTime).toFixed(0);
+}
+volumeline.onchange= function() {
+soundcolor.style.opacity = volumeline.value/100;
+player.volume=volumeline.value/100;
+}
+</script>
+</body>

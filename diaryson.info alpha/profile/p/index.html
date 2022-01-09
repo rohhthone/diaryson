@@ -1,0 +1,375 @@
+<html>
+<head>
+<title>CC Profile</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="author" content="suicvairduCConstantinius">
+<meta name="format-detection" content="telephone=no">
+</head>
+<script>
+        var image1={
+            id:1,
+            title:"a",
+            image:"1mq.jpg",
+        }, 
+        image2={
+            id:2,
+            title:"f",
+            image:"2mq.jpg",
+        }, 
+        image3={
+            id:3,
+            title:"d",
+            image:"3hq.jpg",
+        }, 
+        image4={
+            id:4,
+            title:"s",
+            image:"4mq.jpg",
+        }, 
+        image5={
+            id:5,
+            title:"g",
+            image:"5mq.jpg",
+        };
+        var images=[image1,image2,image3,image4,image5];
+function file(){
+    let i="";
+        imageplace.style.backgroundImage='url('+images[0].image+')';
+        imagetitle.innerHTML='Title - '+images[0].title;
+        slider.max=images.length;
+        for(let i=0; i<images.length;i++){  
+            if(images[i].id===1){
+                medialist.innerHTML+='<div class="item used" data-id="'+images[i].id+'" id="video'+images[i].id+'"  style="background-image: url('+images[i].image+')" onclick="openVideo();"></div>';
+            } else {medialist.innerHTML+='<div class="item" data-id="'+images[i].id+'" id="video'+images[i].id+'"  style="background-image: url('+images[i].image+')" onclick="openVideo();"></div>';}
+        }
+}
+function openVideo(e) {
+    var elem=e ? e.target : window.event.srcElement;
+    if (elem.classList.contains('used')){
+    } else { 
+        for(let i=0; i<document.getElementsByClassName('item').length;i++){
+            if(document.getElementsByClassName('item')[i].classList.contains('used')){document.getElementsByClassName('item')[i].classList.toggle('used')}else{}
+            
+    }
+    let o = elem.dataset.id;
+        o=parseInt(o)-1;
+    imageplace.style.backgroundImage='url('+images[o].image+')';
+    slider.value=o+1;
+    elem.classList.toggle('used');
+}
+}
+    </script>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+    .functions{
+        width: 10%;
+        background-color: #f4f4f4;
+        height: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;   
+    }
+    .functions>.button{
+        width: 9vmin;
+        height: 9vmin;
+        cursor: pointer;
+        transition: width 1s, height 1s, transform 1.23s;
+    }
+    .functions>.button:hover{
+        transform: scale(0.7);
+    }
+    .left{
+        left: 0;
+    }
+    .right{
+        right: 0;
+    }
+    html{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    body{
+        width: 80vw;
+        height: auto;
+        left: 10vw;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .functions>.volume{width: 100%;height: 100%; display: flex;  align-items: center; flex-direction: column;}
+    .functions>.volume>.icon{height: 10vmin; width: 10vmin; transform: rotate(-90deg);} 
+    video{height: 80vh;}
+    .item{background-repeat: no-repeat; background-size: 100%; background-position: center; cursor: pointer;}
+    .used{opacity: 0.7; cursor: none;}
+    #volumeline{width: 30vmax; margin-top: 15vmax;}
+    @media screen and (max-width: 70vh) {
+    .functions.left{
+        width: 100vw;
+        height: 10vmin;
+        top: 0;
+    }
+    .functions.left>.button>svg{transform: rotate(90deg);}
+    body{margin-top: 10vmin;}
+    }
+</style>
+<div class="functions left">
+<div class="button" id="backbutton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.355 340.158"><title>Back</title><rect class="a" x="1.036" width="340.157" height="340.157"/><path class="b" d="M341.355,126.417v87.64a21.259,21.259,0,0,1-21.26,21.26H202.729a6.964,6.964,0,0,0-6.964,6.964v72.006c0,23-27.8,34.52-44.066,18.265Q79.637,260.534,7.565,188.507a25.832,25.832,0,0,1-.01-36.52L151.685,7.777c16.26-16.27,44.08-4.76,44.08,18.25V98.194a6.963,6.963,0,0,0,6.964,6.963H320.1A21.26,21.26,0,0,1,341.355,126.417Z"/></svg></div>
+</div>
+<div class="functions right">
+<div class="button" id="download">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340.399"><defs><style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style></defs><title>round</title><rect class="a" y="0.399" width="100%" height="100%"/><path class="b" d="M340,171.42V319.06a21.259,21.259,0,0,1-21.26,21.26H89.77v-.16H21.26A21.259,21.259,0,0,1,0,318.9V171.42a21.259,21.259,0,0,1,21.26-21.26H68.74A21.259,21.259,0,0,1,90,171.42v57.64a21.259,21.259,0,0,0,21.26,21.26H228.74A21.259,21.259,0,0,0,250,229.06V171.42a21.259,21.259,0,0,1,21.26-21.26h47.48A21.259,21.259,0,0,1,340,171.42Z"/><path class="b" d="M267.477,115.823l-83.388,83.388a19.925,19.925,0,0,1-28.178,0l-9.051-9.051-21.97-21.97L72.523,115.823a9.175,9.175,0,0,1,6.488-15.663h36.5a9.379,9.379,0,0,0,9.379-9.379V19.926A19.926,19.926,0,0,1,144.816,0h50.149A19.926,19.926,0,0,1,214.89,19.926V90.781a9.379,9.379,0,0,0,9.379,9.379h36.72A9.175,9.175,0,0,1,267.477,115.823Z"/></svg>
+</div>
+</div>
+<body onload="file();">
+    
+<style>
+    .title{
+        width: 100%;
+        height: 5vmin;
+        background-color: #f4f4f4;
+        border-radius: 0.3vmin;
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center;
+        font-size: 4vmin;
+    }
+    .image{
+        width: 100%;
+        height: 70vmin;
+        background-color: #0c0c0c;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 0.3vmin;
+    }
+    .option{
+        width: 100%;
+        height: 12vmin;
+
+    }
+    .list{
+        width: 100%;
+        height: auto;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    #imageplace{
+        width: 70vmin;
+        height: 70vmin;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+
+    }
+    .list>div{
+        background-color: #0c0c0c;
+        width: 15vmax;
+        height: 15vmax;
+        border-radius: 0.3vmin;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    }
+    input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    }
+    input[type=range]:focus {
+    outline: none;
+    }
+    input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 2vmin;
+    width: 10%;
+    background: #0c0c0c;
+    cursor: pointer;
+    border-bottom-left-radius: 0.3vmin;
+    border-bottom-right-radius: 0.3vmin;
+    }
+    input[type=range]:focus::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    width: 10%;
+    background: #c3c3c3;
+    cursor: pointer;
+    }
+    input[type=range]::-moz-range-thumb {
+    height: 2vmin;
+    width: 10%;
+    background: #0c0c0c;
+    cursor: pointer;
+    border-bottom-left-radius: 0.3vmin;
+    border-bottom-right-radius: 0.3vmin;
+    }
+    input[type=range]::-ms-thumb {
+    height: 2vmin;
+    width: 10%;
+    background: #0c0c0c;
+    cursor: pointer;
+    border-bottom-left-radius: 0.3vmin;
+    border-bottom-right-radius: 0.3vmin;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1vmin;
+    cursor: pointer;
+    background: #0c0c0c;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #0c0c0c;
+    }
+    input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1vmin;
+    cursor: pointer;
+    background: #0c0c0c;
+    }
+    input[type=range]::-ms-track {
+    width: 100%;
+    height: 1vmin;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+    background: #0c0c0c;
+    border-radius: 0.3vmin;
+    }
+    input[type=range]:focus::-ms-fill-lower {
+    background: #0c0c0c;
+    }
+    input[type=range]::-ms-fill-upper {
+    background: #0c0c0c;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+    background: #0c0c0c;
+    }
+
+    .option>.line{height: 2vmin; width: 100%;}
+    .option>.buttons{height: 10vmin; width: 100%; display: flex; justify-content: space-around; align-items: center;}
+    .option>.buttons>.button{height: 7vmin; width: 7vmin; cursor: pointer;}
+    .right>.button{height: 7vmin; width: 7vmin;}
+    #rightstep{transform: rotate(180deg);transition: 1s;}
+    #leftstep{transition: 1s;}
+    #leftstep:hover{transform: translateX(-20%);}
+    #rightstep:hover{transform: translateX(20%) rotate(180deg);}
+    #full_btn{transition: 1s;}
+    #full_btn:hover{transform: scale(1.2) rotate(90deg);}
+    #slider{width: 100%;}
+    .used{opacity: 0.7; cursor: none;}
+    .hid{display: none;}
+</style>
+
+<div class="title" id="imagetitle"></div>
+<div class="image">
+    <div id="imageplace">
+
+    </div>
+</div>
+<div class="option">
+    <div class="line">
+        <input type="range" id="slider" value="1" min="1">
+    </div>
+    <div class="buttons">
+        <div class="button" id="leftstep">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.351 340.157"><defs><style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style></defs><title>round</title><rect class="a" x="1.036" width="100%" height="100%"/><path class="b" d="M195.768,314.286V26.029c0-23.007-27.819-34.525-44.082-18.252L7.557,151.989A25.821,25.821,0,0,0,7.568,188.5L151.7,332.549C167.964,348.807,195.768,337.285,195.768,314.286Z"/><path class="b" d="M141.194,105.157h178.9a21.26,21.26,0,0,1,21.26,21.26v87.638a21.26,21.26,0,0,1-21.26,21.26h-178.9a0,0,0,0,1,0,0V105.157A0,0,0,0,1,141.194,105.157Z"/></svg>
+        </div>
+        <div class="button" id="full_btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.157"><defs><style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style></defs><title>round</title><rect class="a" width="100%" height="100%"/><rect class="b" y="120" width="90" height="220" rx="21.26"/><rect class="b" x="250" width="90" height="220" rx="21.26"/><rect class="b" width="220" height="90" rx="21.26"/><rect class="b" x="120" y="250" width="220" height="90" rx="21.26"/><rect class="b" x="120" y="120" width="100" height="100" rx="21.26" transform="translate(340) rotate(90)"/></svg>
+        </div>
+        <div class="button hid" id="unfull_btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.157 340.157"><defs><style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style></defs><title>round</title><rect class="a" width="100%" height="100%"/><rect class="b" y="120" width="90" height="220" rx="21.26"/><rect class="b" x="250" width="90" height="220" rx="21.26"/><rect class="b" width="220" height="90" rx="21.26"/><rect class="b" x="120" y="250" width="220" height="90" rx="21.26"/></svg>
+        </div>
+        <div class="button" id="rightstep">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.351 340.157"><defs><style>.a{fill:#f4f4f4;}.b{fill:#0c0c0c;}</style></defs><title>round</title><rect class="a" x="1.036" width="100%" height="100%"/><path class="b" d="M195.768,314.286V26.029c0-23.007-27.819-34.525-44.082-18.252L7.557,151.989A25.821,25.821,0,0,0,7.568,188.5L151.7,332.549C167.964,348.807,195.768,337.285,195.768,314.286Z"/><path class="b" d="M141.194,105.157h178.9a21.26,21.26,0,0,1,21.26,21.26v87.638a21.26,21.26,0,0,1-21.26,21.26h-178.9a0,0,0,0,1,0,0V105.157A0,0,0,0,1,141.194,105.157Z"/></svg>
+        </div>
+    </div>
+</div>
+<div class="list" id="medialist">
+</div>
+<script>
+    slider.onchange = function(){let n=slider.value;n=parseInt(n,10);n=n-1;imageplace.style.backgroundImage='url('+images[n].image+')';imagetitle.innerHTML='Title - '+images[n].title;}
+    backbutton.onclick=function(){location.href='../'}
+    rightstep.onclick = function() {
+    let u=0;
+        for(let i=0; i<document.getElementsByClassName('item').length;i++){
+            if(document.getElementsByClassName('item')[i].classList.contains('used')){
+                u=i;
+            }
+    }
+    if(u==(document.getElementsByClassName('item').length-1)){
+        imageplace.style.backgroundImage='url('+images[0].image+')';
+        imagetitle.innerHTML='Title - '+images[0].title;
+        slider.value=1;
+        document.getElementsByClassName('item')[u].classList.toggle('used');
+        document.getElementsByClassName('item')[0].classList.toggle('used');
+    } else {
+        imageplace.style.backgroundImage='url('+images[u+1].image+')';
+        imagetitle.innerHTML='Title - '+images[u+1].title;
+        slider.value=u+2;
+        document.getElementsByClassName('item')[u].classList.toggle('used');
+        document.getElementsByClassName('item')[u+1].classList.toggle('used');
+    }
+}
+leftstep.onclick = function() {
+    let u=0;
+        for(let i=0; i<document.getElementsByClassName('item').length;i++){
+            if(document.getElementsByClassName('item')[i].classList.contains('used')){
+                u=i;
+            }
+    }
+    let o=document.getElementsByClassName('item').length;
+    if(u==0){
+        imageplace.style.backgroundImage='url('+images[o-1].image+')';
+        imagetitle.innerHTML='Title - '+images[o-1].title;
+        slider.value=o;
+        document.getElementsByClassName('item')[u].classList.toggle('used');
+        document.getElementsByClassName('item')[o-1].classList.toggle('used');
+    } else {
+        imageplace.style.backgroundImage='url('+images[u-1].image+')';
+        imagetitle.innerHTML='Title - '+images[u-1].title;
+        slider.value=u;
+        document.getElementsByClassName('item')[u].classList.toggle('used');
+        document.getElementsByClassName('item')[u-1].classList.toggle('used');
+    }
+}
+    full_btn.onclick = function() {
+        var fullscreen = imageplace.webkitRequestFullscreen || imageplace.mozRequestFullScreen || imageplace.requestFullscreen || imageplace.msRequestFullscreen;
+        fullscreen.call(imageplace);
+    }
+    download.onclick = function() {
+        let u=0;
+        for(let i=0; i<document.getElementsByClassName('item').length;i++){
+            if(document.getElementsByClassName('item')[i].classList.contains('used')){
+                u=i;
+            }
+        }
+        let href=images[u].image;
+        window.open(href);
+    }
+</script>
+</body>
+</html>

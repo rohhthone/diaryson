@@ -1,0 +1,36 @@
+<html>
+<head><title>Data (admin panel)</title></head>
+<style>
+*{padding: 0.1vmin; margin: 0.1vmin;}
+html{text-align:center;font-family:'Segoe UI';font-size:2vmax;}
+form{display: flex;justify-content: space-around;align-items: center;flex-direction: column;font-size:inherit; font-family:inherit;}
+input,button,select,textarea,a{width: 80vw;margin:1vmin;font-size:inherit; font-family:inherit;}
+footer,header{position:fixed;width:100%;display:flex;text-align:justify;opacity:0;}
+footer:hover,header:hover{opacity: 1;}
+</style>
+<header style="top:0;right:0;"><a href="../">Back</a></header>
+<body>
+<form action="" method="GET">
+<label for="AddTable"><h1>Add table</h1></label>
+<input type="text" name="day" id="AddTable" required>
+<?php $time=now(); ?>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="ChooseTable"><h1>Choose table</h1></label>
+<input type="text" name="day" id="ChooseTable" title="table1, table2, table3, table4" placeholder="table1, table2, table3, table4" required>
+<?php $time=now(); ?>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="POST">
+<input type="hidden" name="table" value="CHOOSENTABLE">
+<label for="AddType"><h1>Add type</h1></label>
+<input type="text" name="type" id="AddType" required>
+<label for="AddValue"><h1>Add value</h1></label>
+<input type="number" name="value" id="AddValue" required>
+<?php $time=now(); ?>
+<button type="submit">Submit</button>
+</form>
+</body>
+<footer style="bottom:0;left:0;"></footer>
+</html>

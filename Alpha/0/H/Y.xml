@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DATA>
+<TIME>2020-09-26</TIME>
+<TYPE>
+<NAME>TEXT</NAME>
+<SIZE>10</SIZE>
+</TYPE>
+<TYPE>
+<NAME>MEDIA</NAME>
+<SIZE>1</SIZE>
+</TYPE>
+<TYPE>
+<NAME>DATA</NAME>
+<SIZE>100</SIZE>
+</TYPE>
+<TYPE>
+<NAME>USER</NAME>
+<SIZE>1</SIZE>
+</TYPE>
+</DATA>

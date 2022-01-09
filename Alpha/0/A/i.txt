@@ -1,0 +1,4 @@
+"A" folder used to administrate site.
+There are should hidden special access for administrators, who can edit them.
+Site's administrators.
+There are actions that needed the permission.

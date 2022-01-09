@@ -1,0 +1,4 @@
+"R" folder used to hold files.
+There are should be placed open site files and usability via connection.
+Site's display.
+There are indexing files of the site for users.

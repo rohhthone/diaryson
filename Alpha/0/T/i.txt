@@ -1,0 +1,4 @@
+"T" folder used to hold team info.
+There are should be placed user data and personal information.
+Site's interactivity.
+There are data to connect to other same engine pages in search technologies.

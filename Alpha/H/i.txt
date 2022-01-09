@@ -1,0 +1,4 @@
+"H" folder used to hold connections between objects.
+Folder for an information about files of the project.
+Website interconnections.
+Relativity, interconnection, veritification.

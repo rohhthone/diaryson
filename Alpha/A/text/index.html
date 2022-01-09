@@ -1,0 +1,45 @@
+<html>
+<head><title>Text (admin panel)</title></head>
+<style>
+*{padding: 0.1vmin; margin: 0.1vmin;}
+html{text-align:center;font-family:'Segoe UI';font-size:2vmax;}
+form{display:flex;justify-content:space-around;align-items:center;flex-direction:column;}
+input,button,select,textarea{width:80vw;margin:1vmin;font-size:inherit;font-family:inherit;}
+textarea{min-height:30vh;}
+footer,header{position:fixed;width:100%;display:flex;text-align:justify;opacity:0;}
+footer:hover,header:hover{opacity:1;}
+</style>
+<header style="top:0;right:0;"><a href="../">Back</a></header>
+<body>
+<form action="" method="GET">
+<label for="addday"><h1>Add day</h1></label>
+<input type="text" name="day" id="addday" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="chooseday"><h1>Choose day</h1></label>
+<input type="text" name="day" id="chooseday" title="day1, day2, day3, day4, day5" placeholder="day1, day2, day3, day4, day5" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="addday"><h1>Add paragraph</h1></label>
+<input type="hidden" name="day" value="CHOOSENDAY">
+<input type="text" name="paragraph" id="addparagraph" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="chooseday"><h1>Choose paragraph</h1></label>
+<input type="hidden" name="day" value="CHOOSENDAY">
+<input type="text" name="paragraph" id="chooseparagraph" title="paragraph1, paragraph2, paragraph3, paragraph4, paragraph5" placeholder="paragraph1, paragraph2, paragraph3, paragraph4, paragraph5" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="addtext"><h1>Add text</h1></label>
+<input type="text" placeholder="Title" id="addtext" required>
+<textarea name="text" required></textarea>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET"><input type="hidden" name="day" value="CHOOSENDAY"><select name="paragraph" ><option value="0">selecteparagraph</option><option value="1">paragraph2</option><option value="2">paragraph3</option><option value="3">paragraph4</option><option value="4">paragraph5</option></select><button type="submit">Submit</button></form>
+</body>
+<footer style="bottom:0;left:0;"></footer>
+</html>

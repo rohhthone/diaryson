@@ -1,0 +1,84 @@
+<html>
+<head><title>Data</title></head>
+<style>
+*{padding: 0.1vmin; margin: 0.1vmin;}
+html{text-align: center; font-family: 'Segoe UI'; font-size: 2vmax;}
+body{display:flex;align-items:center; flex-direction:column;margin-top: 15vmin;}
+menu{width:100%;display:flex;align-items:center;justify-content:space-around;position:fixed;bottom:0;right:0;background-color:white;z-index: 1;height: 10vmin;border-top: ridge 0.3vmin black;margin: 0;}
+footer{width:100%;display:flex;align-items:center;justify-content:space-around;position:fixed;top:0;left:0;}
+
+/* Normal mode settings */
+/* table{width: 80vw; padding: 1vmin; font-size: inherit;}
+th{text-align: center; opacity: 0.5; width: 33.34%; border-bottom: solid 0.1vmin black; padding: 1vmin;}
+tr{width: 100%;}
+td:first-child,th:first-child{text-align:left}
+td:nth-child(2),th:nth-child(2){text-align: center;}
+td:last-child,th:last-child{text-align: right;} */
+
+/* Advanced mode settings */
+/* table{width: 80vw; padding: 1vmin; font-size: inherit;}
+th{text-align: center; opacity: 0.5; width: 25%; border-bottom: solid 0.1vmin black; padding: 1vmin;}
+tr{width: 100%;} */
+
+/* Advanced mode with admin permission settings */
+table{width: 80vw; padding: 1vmin; font-size: inherit;}
+th{text-align: center; opacity: 0.5; width: 20%; border-bottom: solid 0.1vmin black; padding: 1vmin;}
+tr{width: 100%;}
+th:last-child{width: 10%;}
+td:last-child{text-align: center;}
+button{font-size: inherit;}
+
+a:any-link{color:gray;text-decoration: none;}
+a:any-link:hover{text-decoration: underline;color: black;}
+a{width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-around;}
+.H{opacity: 0;}
+.H:hover{opacity: 1;}
+</style>
+<menu><a href="../text/">Text</a><a href="../media/">Media</a><a>Data</a></menu>
+<body>
+<!-- Normal mode -->
+<!-- <h1>Table ONE</h1>
+<table>
+<tr><th>Type</th><th>Value</th><th>Time</th></tr>
+<tr><td>EarnEuro</td><td>10</td><td>07.09.2020</td></tr>
+<tr><td>EarnRuble</td><td>100</td><td>07.09.2020</td></tr>
+<tr><td>EarnDollar</td><td>1000</td><td>07.09.2020</td></tr>
+<tr><td>SpendEuro</td><td>10000</td><td>07.09.2020</td></tr>
+<tr><td>SpendRuble</td><td>100000</td><td>07.09.2020</td></tr>
+<tr><td>SpendDollar</td><td>1000000</td><td>07.09.2020</td></tr>
+</table> -->
+
+<!-- Advanced mode -->
+<!-- <h1>Table ONE</h1>
+<table>
+<tr><th>Type</th><th>Value</th><th>Time</th><th>Info</th></tr>
+<tr><td>EarnEuro</td><td>10</td><td>07.09.2020</td><td>description of action</td></tr>
+<tr><td>EarnRuble</td><td>100</td><td>07.09.2020</td><td>description of action</td></tr>
+<tr><td>EarnDollar</td><td>1000</td><td>07.09.2020</td><td>description of action</td></tr>
+<tr><td>SpendEuro</td><td>10000</td><td>07.09.2020</td><td>description of action</td></tr>
+<tr><td>SpendRuble</td><td>100000</td><td>07.09.2020</td><td>description of action</td></tr>
+<tr><td>SpendDollar</td><td>1000000</td><td>07.09.2020</td><td>description of action</td></tr>
+</table> -->
+
+<!-- Advenced admin mode -->
+<h1>Table ONE</h1>
+<table>
+<tr><th>Type</th><th>Value</th><th>Time</th><th>Info</th><th>Action</th></tr>
+<tr><form action="" method="POST"><td>Ruble</td><td>100</td><td>07.09.2020</td><td>description of data</td><td><button type="submit" name="delete">Delete</button></td></form></tr>
+<tr><form action="" method="POST"><td>Dollar</td><td>100</td><td>07.09.2020</td><td>description of data</td><td><button type="submit" name="delete">Delete</button></td></form></tr>
+<tr><form action="" method="POST"><td>Euro</td><td>100</td><td>07.09.2020</td><td>description of data</td><td><button type="submit" name="delete">Delete</button></td></form></tr>
+<tr><form action="" method="POST"><td>Ruble</td><td>-100</td><td>07.09.2020</td><td>description of data</td><td><button type="submit" name="delete">Delete</button></td></form></tr>
+<tr><form action="" method="POST"><td>Dollar</td><td>-100</td><td>07.09.2020</td><td>description of data</td><td><button type="submit" name="delete">Delete</button></td></form></tr>
+<tr><form action="" method="POST"><td>Euro</td><td>-100</td><td>07.09.2020</td><td>description of data</td><td><button type="submit" name="delete">Delete</button></td></form></tr>
+</table>
+
+</body>
+<footer class="H">
+<!-- Normal mode -->
+<!-- <form action="" method="GET"><input type="hidden" name="mode" value="A"><button type="submit">Advanced mode</button></form> -->
+<a href="../data/">Normal mode</a>
+</footer>
+</html>
+<?php
+if(isset($_POST['delete'])){DELETE FROM 'table' WHERE 'ID'=$_POST['id']}
+?>

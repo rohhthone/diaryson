@@ -1,0 +1,4 @@
+"E" folder used to activate site work.
+There should be back end files to make site workable.
+Site's engine.
+There are algorythms of objects action.

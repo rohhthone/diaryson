@@ -1,0 +1,57 @@
+<html>
+<head><title>Media (admin panel)</title></head>
+<style>
+*{padding: 0.1vmin; margin: 0.1vmin;}
+html{text-align:center;font-family:'Segoe UI';font-size:2vmax;}
+form{display: flex;justify-content: space-around;align-items: center;flex-direction: column;font-size:inherit; font-family:inherit;}
+input,button,select,textarea,a{width: 80vw;margin:1vmin;font-size:inherit; font-family:inherit;}
+footer,header{position:fixed;width:100%;display:flex;text-align:justify;opacity:0;}
+footer:hover,header:hover{opacity: 1;}
+</style>
+<header style="top:0;right:0;"><a href="../">Back</a></header>
+<body>
+<form action="" method="GET">
+<label for="addgroup"><h1>Add album</h1></label>
+<input type="text" name="album" id="addgroup" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="choosegroup"><h1>Choose album</h1></label>
+<input type="text" name="album" id="choosgroup" title="album3, album2, album1" placeholder="album3, album2, album1" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="GET">
+<label for="chooseobject"><h1>Choose type</h1></label>
+<input type="hidden" name="album" value="CHOOSENALBUM">
+<select name="type"><option value="v">Video</option><option value="a">Audio</option><option value="i">Image</option></select>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="POST">
+<input type="hidden" name="album" value="CHOOSENALBUM">
+<label for="addtitle"><h3>Add title</h3></label>
+<input type="text" name="title" id="addtitle" required>
+<label for="addobject"><h3>Add video</h3></label>
+<input type="file" name="cover" accept="video/mp4, video/ogg, video/webm" id="addobject" required>
+<label for="addcover"><h4>Add wallpaper</h4></label>
+<input type="file" name="cover" accept="image/*" id="addcover" title="Wallpaper for video">
+<button type="submit">Submit</button>
+</form>
+<form action="" method="POST">
+<label for="addtitle"><h3>Add title</h3></label>
+<input type="text" name="title" id="addtitle" required>
+<input type="hidden" name="album" value="CHOOSENALBUM">
+<label for="addobject"><h3>Add image</h3></label>
+<input type="file" name="cover" accept="image/*" id="addobject" required>
+<button type="submit">Submit</button>
+</form>
+<form action="" method="POST">
+<label for="addtitle"><h3>Add title</h3></label>
+<input type="text" name="title" id="addtitle" required>
+<input type="hidden" name="album" value="CHOOSENALBUM">
+<label for="addobject"><h3>Add audio</h3></label>
+<input type="file" name="cover" accept="audio/*" id="addobject" required>
+<button type="submit">Submit</button>
+</form>
+</body>
+<footer style="bottom:0;left:0;"></footer>
+</html>

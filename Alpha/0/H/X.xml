@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DATA>
+<UNIT>
+<TIME>2020-09-26</TIME>
+<HI>ALLOW</HI>
+<ID>1</ID>
+<IP>HTTP://DIARYSON.COM/</IP>
+</UNIT>
+<UNIT>
+<TIME>2020-09-26</TIME>
+<HI>DENY</HI>
+<ID>2</ID>
+<IP>HTTP://DIARYSON.INFO/</IP>
+</UNIT>
+</DATA>
